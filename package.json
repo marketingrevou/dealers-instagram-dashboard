@@ -1,0 +1,14 @@
+{
+  "name": "mitsubishi-instagram-scraper",
+  "version": "1.0.0",
+  "description": "Scrape Mitsubishi dealer Instagram accounts and compare periods",
+  "main": "scraper.js",
+  "scripts": {
+    "scrape": "node scraper.js",
+    "scrape:dry": "node scraper.js --dry-run"
+  },
+  "dependencies": {
+    "apify-client": "^2.9.3",
+    "dotenv": "^16.4.5"
+  }
+}

@@ -1,0 +1,2 @@
+[     267ms] ReferenceError: updateBadge is not defined
+    at http://localhost:8765/dashboard.html:466:1

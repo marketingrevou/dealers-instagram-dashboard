@@ -1,0 +1,937 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - heading "🚗 Mitsubishi Dealer Instagram Dashboard" [level=1] [ref=e4]
+      - generic [ref=e5]: 22 dealer accounts · Data from Jan 2024
+    - generic [ref=e6]: "Last updated: May 8, 2025"
+  - generic [ref=e7]:
+    - generic [ref=e8]: Range
+    - generic [ref=e9]:
+      - button "Last 3M" [ref=e10] [cursor=pointer]
+      - button "Last 6M" [ref=e11] [cursor=pointer]
+      - button "All (Jan 2024)" [ref=e12] [cursor=pointer]
+    - generic [ref=e14]: Custom
+    - textbox [ref=e15]: 2024-01-01
+    - generic [ref=e16]: →
+    - textbox [ref=e17]: 2025-05-08
+    - generic [ref=e19]: View
+    - generic [ref=e20]:
+      - button "Monthly" [ref=e21] [cursor=pointer]
+      - button "Weekly" [active] [ref=e22] [cursor=pointer]
+    - generic [ref=e23]: Feb 17 – May 12 · 13 weeks
+  - generic [ref=e24]:
+    - generic [ref=e25]:
+      - generic [ref=e1496]:
+        - generic [ref=e1497]: Total Posts
+        - generic [ref=e1498]: "727"
+        - generic [ref=e1499]: Feb 17 – May 12
+      - generic [ref=e1500]:
+        - generic [ref=e1501]: Total Likes
+        - generic [ref=e1502]: 143K
+        - generic [ref=e1503]: Feb 17 – May 12
+      - generic [ref=e1504]:
+        - generic [ref=e1505]: Total Views
+        - generic [ref=e1506]: 440K
+        - generic [ref=e1507]: Feb 17 – May 12 · video only
+      - generic [ref=e1508]:
+        - generic [ref=e1509]: Active Accounts
+        - generic [ref=e1510]: 15 / 22
+        - generic [ref=e1511]: 7 dormant (no post in 14d)
+    - generic [ref=e42]:
+      - generic [ref=e43]:
+        - text: ⚡ Insights
+        - generic [ref=e44]: · Feb 17 – May 12
+      - generic [ref=e45]:
+        - generic [ref=e1512]:
+          - generic [ref=e1513]: 🔴
+          - generic [ref=e1514]:
+            - strong [ref=e1515]: "Dormant:"
+            - text: "@atho_mitsubishiserang hasn't posted in"
+            - strong [ref=e1516]: 15 days
+        - generic [ref=e1517]:
+          - generic [ref=e1518]: 🔴
+          - generic [ref=e1519]:
+            - strong [ref=e1520]: "Dormant:"
+            - text: "@bumenredjaabadi_sidoarjo hasn't posted in"
+            - strong [ref=e1521]: 16 days
+        - generic [ref=e1522]:
+          - generic [ref=e1523]: 🔴
+          - generic [ref=e1524]:
+            - strong [ref=e1525]: "Dormant:"
+            - text: "@mitsubishi_tangeranggg hasn't posted in"
+            - strong [ref=e1526]: 17 days
+        - generic [ref=e1527]:
+          - generic [ref=e1528]: 🔴
+          - generic [ref=e1529]:
+            - strong [ref=e1530]: "Dormant:"
+            - text: "@mitsubishicibubur.linda hasn't posted in"
+            - strong [ref=e1531]: 19 days
+        - generic [ref=e1532]:
+          - generic [ref=e1533]: 🔴
+          - generic [ref=e1534]:
+            - strong [ref=e1535]: "Dormant:"
+            - text: "@marketingmobil137.id hasn't posted in"
+            - strong [ref=e1536]: 20 days
+        - generic [ref=e1537]:
+          - generic [ref=e1538]: 🔴
+          - generic [ref=e1539]:
+            - strong [ref=e1540]: "Dormant:"
+            - text: "@salesmedioker.mdn hasn't posted in"
+            - strong [ref=e1541]: 21 days
+        - generic [ref=e1542]:
+          - generic [ref=e1543]: 🔴
+          - generic [ref=e1544]:
+            - strong [ref=e1545]: "Dormant:"
+            - text: "@dennymitsubishibukittinggi hasn't posted in"
+            - strong [ref=e1546]: 18 days
+        - generic [ref=e1547]:
+          - generic [ref=e1548]: 📈
+          - generic [ref=e1549]:
+            - strong [ref=e1550]: "Rising:"
+            - text: "@mitsubishi.gresik engagement up"
+            - strong [ref=e1551]: +42%
+            - text: vs previous period
+        - generic [ref=e1552]:
+          - generic [ref=e1553]: 📉
+          - generic [ref=e1554]:
+            - strong [ref=e1555]: "Declining:"
+            - text: "@halomitsubishi engagement down"
+            - strong [ref=e1556]: −35%
+            - text: vs previous period
+        - generic [ref=e1557]:
+          - generic [ref=e1558]: 🎬
+          - generic [ref=e1559]:
+            - strong [ref=e1560]: "Content insight:"
+            - text: Video posts get
+            - strong [ref=e1561]: 3.2×
+            - text: more engagement than Images across all accounts
+        - generic [ref=e1562]:
+          - generic [ref=e1563]: ⭐
+          - generic [ref=e1564]:
+            - strong [ref=e1565]: "Top performer:"
+            - text: "@rismamitsubishisolo — avg"
+            - strong [ref=e1566]: 284 engagement/post
+    - generic [ref=e101]:
+      - generic [ref=e102]:
+        - generic [ref=e103]: 🏆 Account Rankings
+        - generic [ref=e104]: Click column header to sort · Click row to expand
+      - table [ref=e105]:
+        - rowgroup [ref=e106]:
+          - row "# Account Posts ↕ Total Likes ↕ Total Views ↕ Avg Eng. Rate ↕ Consistency Last Posted Status" [ref=e107]:
+            - columnheader "#" [ref=e108] [cursor=pointer]
+            - columnheader "Account" [ref=e109] [cursor=pointer]
+            - columnheader "Posts ↕" [ref=e110] [cursor=pointer]
+            - columnheader "Total Likes ↕" [ref=e111] [cursor=pointer]
+            - columnheader "Total Views ↕" [ref=e112] [cursor=pointer]
+            - columnheader "Avg Eng. Rate ↕" [ref=e113] [cursor=pointer]
+            - columnheader "Consistency" [ref=e114] [cursor=pointer]
+            - columnheader "Last Posted" [ref=e115] [cursor=pointer]
+            - columnheader "Status" [ref=e116] [cursor=pointer]
+        - rowgroup
+        - row "1 @rismamitsubishisolo 300 89,400 312,000 284 8.5/wk 2d ago Top" [ref=e117] [cursor=pointer]:
+          - cell "1" [ref=e118]
+          - cell "@rismamitsubishisolo" [ref=e119]
+          - cell "300" [ref=e120]
+          - cell "89,400" [ref=e121]
+          - cell "312,000" [ref=e122]
+          - cell "284" [ref=e123]:
+            - strong [ref=e124]: "284"
+          - cell "8.5/wk" [ref=e125]:
+            - generic [ref=e129]: 8.5/wk
+          - cell "2d ago" [ref=e130]
+          - cell "Top" [ref=e131]:
+            - generic [ref=e132]: Top
+        - row "2 @mitsubishi.gresik 286 72,100 284,000 240 7.8/wk Yesterday Top" [ref=e133] [cursor=pointer]:
+          - cell "2" [ref=e134]
+          - cell "@mitsubishi.gresik" [ref=e135]
+          - cell "286" [ref=e136]
+          - cell "72,100" [ref=e137]
+          - cell "284,000" [ref=e138]
+          - cell "240" [ref=e139]:
+            - strong [ref=e140]: "240"
+          - cell "7.8/wk" [ref=e141]:
+            - generic [ref=e145]: 7.8/wk
+          - cell "Yesterday" [ref=e146]
+          - cell "Top" [ref=e147]:
+            - generic [ref=e148]: Top
+        - row "3 @mitsubishi.dipopuri 300 61,200 198,000 198 8.0/wk 3d ago Top" [ref=e149] [cursor=pointer]:
+          - cell "3" [ref=e150]
+          - cell "@mitsubishi.dipopuri" [ref=e151]
+          - cell "300" [ref=e152]
+          - cell "61,200" [ref=e153]
+          - cell "198,000" [ref=e154]
+          - cell "198" [ref=e155]:
+            - strong [ref=e156]: "198"
+          - cell "8.0/wk" [ref=e157]:
+            - generic [ref=e161]: 8.0/wk
+          - cell "3d ago" [ref=e162]
+          - cell "Top" [ref=e163]:
+            - generic [ref=e164]: Top
+        - row "4 @sunstarmotorsurabaya 214 54,300 176,000 185 7.2/wk 5d ago Top" [ref=e165] [cursor=pointer]:
+          - cell "4" [ref=e166]
+          - cell "@sunstarmotorsurabaya" [ref=e167]
+          - cell "214" [ref=e168]
+          - cell "54,300" [ref=e169]
+          - cell "176,000" [ref=e170]
+          - cell "185" [ref=e171]:
+            - strong [ref=e172]: "185"
+          - cell "7.2/wk" [ref=e173]:
+            - generic [ref=e177]: 7.2/wk
+          - cell "5d ago" [ref=e178]
+          - cell "Top" [ref=e179]:
+            - generic [ref=e180]: Top
+        - row "5 @sunstarprimamotorfatmawati 295 48,900 142,000 171 7.4/wk 4d ago Top" [ref=e181] [cursor=pointer]:
+          - cell "5" [ref=e182]
+          - cell "@sunstarprimamotorfatmawati" [ref=e183]
+          - cell "295" [ref=e184]
+          - cell "48,900" [ref=e185]
+          - cell "142,000" [ref=e186]
+          - cell "171" [ref=e187]:
+            - strong [ref=e188]: "171"
+          - cell "7.4/wk" [ref=e189]:
+            - generic [ref=e193]: 7.4/wk
+          - cell "4d ago" [ref=e194]
+          - cell "Top" [ref=e195]:
+            - generic [ref=e196]: Top
+        - row "6 @mitsubishidipo.arengka 236 41,200 118,000 160 6.5/wk 6d ago" [ref=e197] [cursor=pointer]:
+          - cell "6" [ref=e198]
+          - cell "@mitsubishidipo.arengka" [ref=e199]
+          - cell "236" [ref=e200]
+          - cell "41,200" [ref=e201]
+          - cell "118,000" [ref=e202]
+          - cell "160" [ref=e203]:
+            - strong [ref=e204]: "160"
+          - cell "6.5/wk" [ref=e205]:
+            - generic [ref=e209]: 6.5/wk
+          - cell "6d ago" [ref=e210]
+          - cell [ref=e211]
+        - row "7 @mitsubishibosowakairagimanado 216 38,700 102,000 148 6.0/wk 7d ago" [ref=e212] [cursor=pointer]:
+          - cell "7" [ref=e213]
+          - cell "@mitsubishibosowakairagimanado" [ref=e214]
+          - cell "216" [ref=e215]
+          - cell "38,700" [ref=e216]
+          - cell "102,000" [ref=e217]
+          - cell "148" [ref=e218]:
+            - strong [ref=e219]: "148"
+          - cell "6.0/wk" [ref=e220]:
+            - generic [ref=e224]: 6.0/wk
+          - cell "7d ago" [ref=e225]
+          - cell [ref=e226]
+        - row "8 @bosowaberlianurip 190 32,100 89,000 132 5.8/wk 9d ago" [ref=e227] [cursor=pointer]:
+          - cell "8" [ref=e228]
+          - cell "@bosowaberlianurip" [ref=e229]
+          - cell "190" [ref=e230]
+          - cell "32,100" [ref=e231]
+          - cell "89,000" [ref=e232]
+          - cell "132" [ref=e233]:
+            - strong [ref=e234]: "132"
+          - cell "5.8/wk" [ref=e235]:
+            - generic [ref=e239]: 5.8/wk
+          - cell "9d ago" [ref=e240]
+          - cell [ref=e241]
+        - row "9 @dena_century 125 21,400 67,000 118 4.5/wk 11d ago" [ref=e242] [cursor=pointer]:
+          - cell "9" [ref=e243]
+          - cell "@dena_century" [ref=e244]
+          - cell "125" [ref=e245]
+          - cell "21,400" [ref=e246]
+          - cell "67,000" [ref=e247]
+          - cell "118" [ref=e248]:
+            - strong [ref=e249]: "118"
+          - cell "4.5/wk" [ref=e250]:
+            - generic [ref=e254]: 4.5/wk
+          - cell "11d ago" [ref=e255]
+          - cell [ref=e256]
+        - row "10 @mitsubishimedan_melvin 108 18,900 54,000 104 4.0/wk 8d ago" [ref=e257] [cursor=pointer]:
+          - cell "10" [ref=e258]
+          - cell "@mitsubishimedan_melvin" [ref=e259]
+          - cell "108" [ref=e260]
+          - cell "18,900" [ref=e261]
+          - cell "54,000" [ref=e262]
+          - cell "104" [ref=e263]:
+            - strong [ref=e264]: "104"
+          - cell "4.0/wk" [ref=e265]:
+            - generic [ref=e269]: 4.0/wk
+          - cell "8d ago" [ref=e270]
+          - cell [ref=e271]
+        - row "11 @halena_mitsubishibandung 73 12,400 38,000 91 3.5/wk 12d ago" [ref=e272] [cursor=pointer]:
+          - cell "11" [ref=e273]
+          - cell "@halena_mitsubishibandung" [ref=e274]
+          - cell "73" [ref=e275]
+          - cell "12,400" [ref=e276]
+          - cell "38,000" [ref=e277]
+          - cell "91" [ref=e278]:
+            - strong [ref=e279]: "91"
+          - cell "3.5/wk" [ref=e280]:
+            - generic [ref=e284]: 3.5/wk
+          - cell "12d ago" [ref=e285]
+          - cell [ref=e286]
+        - row "12 @halomitsubishi 73 11,200 31,000 82 3.2/wk 10d ago" [ref=e287] [cursor=pointer]:
+          - cell "12" [ref=e288]
+          - cell "@halomitsubishi" [ref=e289]
+          - cell "73" [ref=e290]
+          - cell "11,200" [ref=e291]
+          - cell "31,000" [ref=e292]
+          - cell "82" [ref=e293]:
+            - strong [ref=e294]: "82"
+          - cell "3.2/wk" [ref=e295]:
+            - generic [ref=e299]: 3.2/wk
+          - cell "10d ago" [ref=e300]
+          - cell [ref=e301]
+        - row "13 @mobil_mitsubishi.co.id 65 9,800 27,000 74 2.8/wk 13d ago" [ref=e302] [cursor=pointer]:
+          - cell "13" [ref=e303]
+          - cell "@mobil_mitsubishi.co.id" [ref=e304]
+          - cell "65" [ref=e305]
+          - cell "9,800" [ref=e306]
+          - cell "27,000" [ref=e307]
+          - cell "74" [ref=e308]:
+            - strong [ref=e309]: "74"
+          - cell "2.8/wk" [ref=e310]:
+            - generic [ref=e314]: 2.8/wk
+          - cell "13d ago" [ref=e315]
+          - cell [ref=e316]
+        - row "14 @sunstarmotorkenjeran 52 8,100 22,000 68 2.5/wk 14d ago" [ref=e317] [cursor=pointer]:
+          - cell "14" [ref=e318]
+          - cell "@sunstarmotorkenjeran" [ref=e319]
+          - cell "52" [ref=e320]
+          - cell "8,100" [ref=e321]
+          - cell "22,000" [ref=e322]
+          - cell "68" [ref=e323]:
+            - strong [ref=e324]: "68"
+          - cell "2.5/wk" [ref=e325]:
+            - generic [ref=e329]: 2.5/wk
+          - cell "14d ago" [ref=e330]
+          - cell [ref=e331]
+        - row "15 @atho_mitsubishiserang 59 7,400 19,000 58 2.2/wk 15d ago" [ref=e332] [cursor=pointer]:
+          - cell "15" [ref=e333]
+          - cell "@atho_mitsubishiserang" [ref=e334]
+          - cell "59" [ref=e335]
+          - cell "7,400" [ref=e336]
+          - cell "19,000" [ref=e337]
+          - cell "58" [ref=e338]:
+            - strong [ref=e339]: "58"
+          - cell "2.2/wk" [ref=e340]:
+            - generic [ref=e344]: 2.2/wk
+          - cell "15d ago" [ref=e345]
+          - cell [ref=e346]
+        - row "16 @bumenredjaabadi_sidoarjo 57 6,900 16,000 52 2.0/wk 16d ago" [ref=e347] [cursor=pointer]:
+          - cell "16" [ref=e348]
+          - cell "@bumenredjaabadi_sidoarjo" [ref=e349]
+          - cell "57" [ref=e350]
+          - cell "6,900" [ref=e351]
+          - cell "16,000" [ref=e352]
+          - cell "52" [ref=e353]:
+            - strong [ref=e354]: "52"
+          - cell "2.0/wk" [ref=e355]:
+            - generic [ref=e359]: 2.0/wk
+          - cell "16d ago" [ref=e360]
+          - cell [ref=e361]
+        - row "17 @mitsubishi_tangeranggg 46 5,800 13,000 46 1.8/wk 17d ago" [ref=e362] [cursor=pointer]:
+          - cell "17" [ref=e363]
+          - cell "@mitsubishi_tangeranggg" [ref=e364]
+          - cell "46" [ref=e365]
+          - cell "5,800" [ref=e366]
+          - cell "13,000" [ref=e367]
+          - cell "46" [ref=e368]:
+            - strong [ref=e369]: "46"
+          - cell "1.8/wk" [ref=e370]:
+            - generic [ref=e374]: 1.8/wk
+          - cell "17d ago" [ref=e375]
+          - cell [ref=e376]
+        - row "18 @mitsubishicibubur.linda 45 4,900 11,000 40 1.6/wk 19d ago Low" [ref=e377] [cursor=pointer]:
+          - cell "18" [ref=e378]
+          - cell "@mitsubishicibubur.linda" [ref=e379]
+          - cell "45" [ref=e380]
+          - cell "4,900" [ref=e381]
+          - cell "11,000" [ref=e382]
+          - cell "40" [ref=e383]:
+            - strong [ref=e384]: "40"
+          - cell "1.6/wk" [ref=e385]:
+            - generic [ref=e389]: 1.6/wk
+          - cell "19d ago" [ref=e390]
+          - cell "Low" [ref=e391]:
+            - generic [ref=e392]: Low
+        - row "19 @marketingmobil137.id 38 3,800 8,000 34 1.4/wk 20d ago Low" [ref=e393] [cursor=pointer]:
+          - cell "19" [ref=e394]
+          - cell "@marketingmobil137.id" [ref=e395]
+          - cell "38" [ref=e396]
+          - cell "3,800" [ref=e397]
+          - cell "8,000" [ref=e398]
+          - cell "34" [ref=e399]:
+            - strong [ref=e400]: "34"
+          - cell "1.4/wk" [ref=e401]:
+            - generic [ref=e405]: 1.4/wk
+          - cell "20d ago" [ref=e406]
+          - cell "Low" [ref=e407]:
+            - generic [ref=e408]: Low
+        - row "20 @ramdhan_mitsubishijakarta 24 2,400 5,000 28 1.0/wk 13d ago Low" [ref=e409] [cursor=pointer]:
+          - cell "20" [ref=e410]
+          - cell "@ramdhan_mitsubishijakarta" [ref=e411]
+          - cell "24" [ref=e412]
+          - cell "2,400" [ref=e413]
+          - cell "5,000" [ref=e414]
+          - cell "28" [ref=e415]:
+            - strong [ref=e416]: "28"
+          - cell "1.0/wk" [ref=e417]:
+            - generic [ref=e421]: 1.0/wk
+          - cell "13d ago" [ref=e422]
+          - cell "Low" [ref=e423]:
+            - generic [ref=e424]: Low
+        - row "21 @salesmedioker.mdn 17 1,100 2,000 18 0.5/wk 21d ago Dormant" [ref=e425] [cursor=pointer]:
+          - cell "21" [ref=e426]
+          - cell "@salesmedioker.mdn" [ref=e427]
+          - cell "17" [ref=e428]
+          - cell "1,100" [ref=e429]
+          - cell "2,000" [ref=e430]
+          - cell "18" [ref=e431]:
+            - strong [ref=e432]: "18"
+          - cell "0.5/wk" [ref=e433]:
+            - generic [ref=e437]: 0.5/wk
+          - cell "21d ago" [ref=e438]
+          - cell "Dormant" [ref=e439]:
+            - generic [ref=e440]: Dormant
+        - row "22 @dennymitsubishibukittinggi 15 800 1,500 14 0.4/wk 18d ago Dormant" [ref=e441] [cursor=pointer]:
+          - cell "22" [ref=e442]
+          - cell "@dennymitsubishibukittinggi" [ref=e443]
+          - cell "15" [ref=e444]
+          - cell "800" [ref=e445]
+          - cell "1,500" [ref=e446]
+          - cell "14" [ref=e447]:
+            - strong [ref=e448]: "14"
+          - cell "0.4/wk" [ref=e449]:
+            - generic [ref=e453]: 0.4/wk
+          - cell "18d ago" [ref=e454]
+          - cell "Dormant" [ref=e455]:
+            - generic [ref=e456]: Dormant
+    - generic [ref=e457]:
+      - generic [ref=e458]:
+        - generic [ref=e459]:
+          - text: 📋 Performance Matrix
+          - generic [ref=e460]: · Click row to pin in trend chart
+        - generic [ref=e461]:
+          - button "Posts" [ref=e462] [cursor=pointer]
+          - button "Likes" [ref=e463] [cursor=pointer]
+          - button "Views" [ref=e464] [cursor=pointer]
+      - table [ref=e466]:
+        - rowgroup [ref=e467]:
+          - row "Account Feb 17 Feb 24 Mar 3 Mar 10 Mar 17 Mar 24 Mar 31 Apr 7 Apr 14 Apr 21 Apr 28 May 5 May 12" [ref=e1567]:
+            - columnheader "Account" [ref=e1568] [cursor=pointer]
+            - columnheader "Feb 17" [ref=e1569] [cursor=pointer]
+            - columnheader "Feb 24" [ref=e1570] [cursor=pointer]
+            - columnheader "Mar 3" [ref=e1571] [cursor=pointer]
+            - columnheader "Mar 10" [ref=e1572] [cursor=pointer]
+            - columnheader "Mar 17" [ref=e1573] [cursor=pointer]
+            - columnheader "Mar 24" [ref=e1574] [cursor=pointer]
+            - columnheader "Mar 31" [ref=e1575] [cursor=pointer]
+            - columnheader "Apr 7" [ref=e1576] [cursor=pointer]
+            - columnheader "Apr 14" [ref=e1577] [cursor=pointer]
+            - columnheader "Apr 21" [ref=e1578] [cursor=pointer]
+            - columnheader "Apr 28" [ref=e1579] [cursor=pointer]
+            - columnheader "May 5" [ref=e1580] [cursor=pointer]
+            - columnheader "May 12" [ref=e1581] [cursor=pointer]
+        - rowgroup [ref=e487]:
+          - row "@rismamitsubishisolo 5 5 9 5 3 4 6 4 10 7 8 10 2" [ref=e1582] [cursor=pointer]:
+            - cell "@rismamitsubishisolo" [ref=e1583]: "@rismamitsubishisolo"
+            - cell "5" [ref=e1585]
+            - cell "5" [ref=e1586]
+            - cell "9" [ref=e1587]
+            - cell "5" [ref=e1588]
+            - cell "3" [ref=e1589]
+            - cell "4" [ref=e1590]
+            - cell "6" [ref=e1591]
+            - cell "4" [ref=e1592]
+            - cell "10" [ref=e1593]
+            - cell "7" [ref=e1594]
+            - cell "8" [ref=e1595]
+            - cell "10" [ref=e1596]
+            - cell "2" [ref=e1597]
+          - row "@mitsubishi.gresik 7 10 10 9 10 6 2 8 7 9 5 5 6" [ref=e1598] [cursor=pointer]:
+            - cell "@mitsubishi.gresik" [ref=e1599]: "@mitsubishi.gresik"
+            - cell "7" [ref=e1601]
+            - cell "10" [ref=e1602]
+            - cell "10" [ref=e1603]
+            - cell "9" [ref=e1604]
+            - cell "10" [ref=e1605]
+            - cell "6" [ref=e1606]
+            - cell "2" [ref=e1607]
+            - cell "8" [ref=e1608]
+            - cell "7" [ref=e1609]
+            - cell "9" [ref=e1610]
+            - cell "5" [ref=e1611]
+            - cell "5" [ref=e1612]
+            - cell "6" [ref=e1613]
+          - row "@mitsubishi.dipopuri 9 7 3 4 9 8 8 4 5 4 2 9 10" [ref=e1614] [cursor=pointer]:
+            - cell "@mitsubishi.dipopuri" [ref=e1615]: "@mitsubishi.dipopuri"
+            - cell "9" [ref=e1617]
+            - cell "7" [ref=e1618]
+            - cell "3" [ref=e1619]
+            - cell "4" [ref=e1620]
+            - cell "9" [ref=e1621]
+            - cell "8" [ref=e1622]
+            - cell "8" [ref=e1623]
+            - cell "4" [ref=e1624]
+            - cell "5" [ref=e1625]
+            - cell "4" [ref=e1626]
+            - cell "2" [ref=e1627]
+            - cell "9" [ref=e1628]
+            - cell "10" [ref=e1629]
+          - row "@sunstarmotorsurabaya 1 3 3 6 5 7 3 5 2 5 6 3 3" [ref=e1630] [cursor=pointer]:
+            - cell "@sunstarmotorsurabaya" [ref=e1631]: "@sunstarmotorsurabaya"
+            - cell "1" [ref=e1633]
+            - cell "3" [ref=e1634]
+            - cell "3" [ref=e1635]
+            - cell "6" [ref=e1636]
+            - cell "5" [ref=e1637]
+            - cell "7" [ref=e1638]
+            - cell "3" [ref=e1639]
+            - cell "5" [ref=e1640]
+            - cell "2" [ref=e1641]
+            - cell "5" [ref=e1642]
+            - cell "6" [ref=e1643]
+            - cell "3" [ref=e1644]
+            - cell "3" [ref=e1645]
+          - row "@sunstarprimamotorfatmawati 4 9 5 4 6 11 10 3 9 10 5 8 8" [ref=e1646] [cursor=pointer]:
+            - cell "@sunstarprimamotorfatmawati" [ref=e1647]: "@sunstarprimamotorfatmawati"
+            - cell "4" [ref=e1649]
+            - cell "9" [ref=e1650]
+            - cell "5" [ref=e1651]
+            - cell "4" [ref=e1652]
+            - cell "6" [ref=e1653]
+            - cell "11" [ref=e1654]
+            - cell "10" [ref=e1655]
+            - cell "3" [ref=e1656]
+            - cell "9" [ref=e1657]
+            - cell "10" [ref=e1658]
+            - cell "5" [ref=e1659]
+            - cell "8" [ref=e1660]
+            - cell "8" [ref=e1661]
+          - row "@mitsubishidipo.arengka 5 5 5 6 3 3 5 5 5 3 2 3 2" [ref=e1662] [cursor=pointer]:
+            - cell "@mitsubishidipo.arengka" [ref=e1663]: "@mitsubishidipo.arengka"
+            - cell "5" [ref=e1665]
+            - cell "5" [ref=e1666]
+            - cell "5" [ref=e1667]
+            - cell "6" [ref=e1668]
+            - cell "3" [ref=e1669]
+            - cell "3" [ref=e1670]
+            - cell "5" [ref=e1671]
+            - cell "5" [ref=e1672]
+            - cell "5" [ref=e1673]
+            - cell "3" [ref=e1674]
+            - cell "2" [ref=e1675]
+            - cell "3" [ref=e1676]
+            - cell "2" [ref=e1677]
+          - row "@mitsubishibosowakairagimanado 6 2 6 2 2 4 2 8 3 5 6 5 4" [ref=e1678] [cursor=pointer]:
+            - cell "@mitsubishibosowakairagimanado" [ref=e1679]: "@mitsubishibosowakairagimanado"
+            - cell "6" [ref=e1681]
+            - cell "2" [ref=e1682]
+            - cell "6" [ref=e1683]
+            - cell "2" [ref=e1684]
+            - cell "2" [ref=e1685]
+            - cell "4" [ref=e1686]
+            - cell "2" [ref=e1687]
+            - cell "8" [ref=e1688]
+            - cell "3" [ref=e1689]
+            - cell "5" [ref=e1690]
+            - cell "6" [ref=e1691]
+            - cell "5" [ref=e1692]
+            - cell "4" [ref=e1693]
+          - row "@bosowaberlianurip 6 5 6 5 6 4 5 4 7 6 3 2 6" [ref=e1694] [cursor=pointer]:
+            - cell "@bosowaberlianurip" [ref=e1695]: "@bosowaberlianurip"
+            - cell "6" [ref=e1697]
+            - cell "5" [ref=e1698]
+            - cell "6" [ref=e1699]
+            - cell "5" [ref=e1700]
+            - cell "6" [ref=e1701]
+            - cell "4" [ref=e1702]
+            - cell "5" [ref=e1703]
+            - cell "4" [ref=e1704]
+            - cell "7" [ref=e1705]
+            - cell "6" [ref=e1706]
+            - cell "3" [ref=e1707]
+            - cell "2" [ref=e1708]
+            - cell "6" [ref=e1709]
+          - row "@dena_century 1 2 4 1 3 3 2 4 3 1 5 3 2" [ref=e1710] [cursor=pointer]:
+            - cell "@dena_century" [ref=e1711]: "@dena_century"
+            - cell "1" [ref=e1713]
+            - cell "2" [ref=e1714]
+            - cell "4" [ref=e1715]
+            - cell "1" [ref=e1716]
+            - cell "3" [ref=e1717]
+            - cell "3" [ref=e1718]
+            - cell "2" [ref=e1719]
+            - cell "4" [ref=e1720]
+            - cell "3" [ref=e1721]
+            - cell "1" [ref=e1722]
+            - cell "5" [ref=e1723]
+            - cell "3" [ref=e1724]
+            - cell "2" [ref=e1725]
+          - row "@mitsubishimedan_melvin 2 4 1 3 2 4 4 2 2 2 3 1 3" [ref=e1726] [cursor=pointer]:
+            - cell "@mitsubishimedan_melvin" [ref=e1727]: "@mitsubishimedan_melvin"
+            - cell "2" [ref=e1729]
+            - cell "4" [ref=e1730]
+            - cell "1" [ref=e1731]
+            - cell "3" [ref=e1732]
+            - cell "2" [ref=e1733]
+            - cell "4" [ref=e1734]
+            - cell "4" [ref=e1735]
+            - cell "2" [ref=e1736]
+            - cell "2" [ref=e1737]
+            - cell "2" [ref=e1738]
+            - cell "3" [ref=e1739]
+            - cell "1" [ref=e1740]
+            - cell "3" [ref=e1741]
+          - row "@halena_mitsubishibandung 2 2 1 1 1 1 2 2 1 2 1 1 1" [ref=e1742] [cursor=pointer]:
+            - cell "@halena_mitsubishibandung" [ref=e1743]: "@halena_mitsubishibandung"
+            - cell "2" [ref=e1745]
+            - cell "2" [ref=e1746]
+            - cell "1" [ref=e1747]
+            - cell "1" [ref=e1748]
+            - cell "1" [ref=e1749]
+            - cell "1" [ref=e1750]
+            - cell "2" [ref=e1751]
+            - cell "2" [ref=e1752]
+            - cell "1" [ref=e1753]
+            - cell "2" [ref=e1754]
+            - cell "1" [ref=e1755]
+            - cell "1" [ref=e1756]
+            - cell "1" [ref=e1757]
+          - row "@halomitsubishi 2 1 1 2 1 1 1 1 2 1 3 3 2" [ref=e1758] [cursor=pointer]:
+            - cell "@halomitsubishi" [ref=e1759]: "@halomitsubishi"
+            - cell "2" [ref=e1761]
+            - cell "1" [ref=e1762]
+            - cell "1" [ref=e1763]
+            - cell "2" [ref=e1764]
+            - cell "1" [ref=e1765]
+            - cell "1" [ref=e1766]
+            - cell "1" [ref=e1767]
+            - cell "1" [ref=e1768]
+            - cell "2" [ref=e1769]
+            - cell "1" [ref=e1770]
+            - cell "3" [ref=e1771]
+            - cell "3" [ref=e1772]
+            - cell "2" [ref=e1773]
+          - row "@mobil_mitsubishi.co.id – 2 1 2 2 1 2 2 2 1 2 1 2" [ref=e1774] [cursor=pointer]:
+            - cell "@mobil_mitsubishi.co.id" [ref=e1775]: "@mobil_mitsubishi.co.id"
+            - cell "–" [ref=e1777]
+            - cell "2" [ref=e1778]
+            - cell "1" [ref=e1779]
+            - cell "2" [ref=e1780]
+            - cell "2" [ref=e1781]
+            - cell "1" [ref=e1782]
+            - cell "2" [ref=e1783]
+            - cell "2" [ref=e1784]
+            - cell "2" [ref=e1785]
+            - cell "1" [ref=e1786]
+            - cell "2" [ref=e1787]
+            - cell "1" [ref=e1788]
+            - cell "2" [ref=e1789]
+          - row "@sunstarmotorkenjeran 1 1 1 1 2 1 1 1 1 2 1 2 1" [ref=e1790] [cursor=pointer]:
+            - cell "@sunstarmotorkenjeran" [ref=e1791]: "@sunstarmotorkenjeran"
+            - cell "1" [ref=e1793]
+            - cell "1" [ref=e1794]
+            - cell "1" [ref=e1795]
+            - cell "1" [ref=e1796]
+            - cell "2" [ref=e1797]
+            - cell "1" [ref=e1798]
+            - cell "1" [ref=e1799]
+            - cell "1" [ref=e1800]
+            - cell "1" [ref=e1801]
+            - cell "2" [ref=e1802]
+            - cell "1" [ref=e1803]
+            - cell "2" [ref=e1804]
+            - cell "1" [ref=e1805]
+          - row "@atho_mitsubishiserang 1 1 2 2 1 2 2 1 – 1 2 1 2" [ref=e1806] [cursor=pointer]:
+            - cell "@atho_mitsubishiserang" [ref=e1807]: "@atho_mitsubishiserang"
+            - cell "1" [ref=e1809]
+            - cell "1" [ref=e1810]
+            - cell "2" [ref=e1811]
+            - cell "2" [ref=e1812]
+            - cell "1" [ref=e1813]
+            - cell "2" [ref=e1814]
+            - cell "2" [ref=e1815]
+            - cell "1" [ref=e1816]
+            - cell "–" [ref=e1817]
+            - cell "1" [ref=e1818]
+            - cell "2" [ref=e1819]
+            - cell "1" [ref=e1820]
+            - cell "2" [ref=e1821]
+          - row "@bumenredjaabadi_sidoarjo 2 2 2 1 1 2 1 – 2 1 1 2 –" [ref=e1822] [cursor=pointer]:
+            - cell "@bumenredjaabadi_sidoarjo" [ref=e1823]: "@bumenredjaabadi_sidoarjo"
+            - cell "2" [ref=e1825]
+            - cell "2" [ref=e1826]
+            - cell "2" [ref=e1827]
+            - cell "1" [ref=e1828]
+            - cell "1" [ref=e1829]
+            - cell "2" [ref=e1830]
+            - cell "1" [ref=e1831]
+            - cell "–" [ref=e1832]
+            - cell "2" [ref=e1833]
+            - cell "1" [ref=e1834]
+            - cell "1" [ref=e1835]
+            - cell "2" [ref=e1836]
+            - cell "–" [ref=e1837]
+          - row "@mitsubishi_tangeranggg 2 1 – 2 1 – 1 1 1 1 1 1 1" [ref=e1838] [cursor=pointer]:
+            - cell "@mitsubishi_tangeranggg" [ref=e1839]: "@mitsubishi_tangeranggg"
+            - cell "2" [ref=e1841]
+            - cell "1" [ref=e1842]
+            - cell "–" [ref=e1843]
+            - cell "2" [ref=e1844]
+            - cell "1" [ref=e1845]
+            - cell "–" [ref=e1846]
+            - cell "1" [ref=e1847]
+            - cell "1" [ref=e1848]
+            - cell "1" [ref=e1849]
+            - cell "1" [ref=e1850]
+            - cell "1" [ref=e1851]
+            - cell "1" [ref=e1852]
+            - cell "1" [ref=e1853]
+          - row "@mitsubishicibubur.linda – – – 1 – 1 1 2 1 – 2 1 2" [ref=e1854] [cursor=pointer]:
+            - cell "@mitsubishicibubur.linda" [ref=e1855]: "@mitsubishicibubur.linda"
+            - cell "–" [ref=e1857]
+            - cell "–" [ref=e1858]
+            - cell "–" [ref=e1859]
+            - cell "1" [ref=e1860]
+            - cell "–" [ref=e1861]
+            - cell "1" [ref=e1862]
+            - cell "1" [ref=e1863]
+            - cell "2" [ref=e1864]
+            - cell "1" [ref=e1865]
+            - cell "–" [ref=e1866]
+            - cell "2" [ref=e1867]
+            - cell "1" [ref=e1868]
+            - cell "2" [ref=e1869]
+          - row "@marketingmobil137.id 1 1 1 1 1 1 1 1 1 1 1 – 1" [ref=e1870] [cursor=pointer]:
+            - cell "@marketingmobil137.id" [ref=e1871]: "@marketingmobil137.id"
+            - cell "1" [ref=e1873]
+            - cell "1" [ref=e1874]
+            - cell "1" [ref=e1875]
+            - cell "1" [ref=e1876]
+            - cell "1" [ref=e1877]
+            - cell "1" [ref=e1878]
+            - cell "1" [ref=e1879]
+            - cell "1" [ref=e1880]
+            - cell "1" [ref=e1881]
+            - cell "1" [ref=e1882]
+            - cell "1" [ref=e1883]
+            - cell "–" [ref=e1884]
+            - cell "1" [ref=e1885]
+          - row "@ramdhan_mitsubishijakarta 1 – – – 1 1 – 1 1 1 – 1 1" [ref=e1886] [cursor=pointer]:
+            - cell "@ramdhan_mitsubishijakarta" [ref=e1887]: "@ramdhan_mitsubishijakarta"
+            - cell "1" [ref=e1889]
+            - cell "–" [ref=e1890]
+            - cell "–" [ref=e1891]
+            - cell "–" [ref=e1892]
+            - cell "1" [ref=e1893]
+            - cell "1" [ref=e1894]
+            - cell "–" [ref=e1895]
+            - cell "1" [ref=e1896]
+            - cell "1" [ref=e1897]
+            - cell "1" [ref=e1898]
+            - cell "–" [ref=e1899]
+            - cell "1" [ref=e1900]
+            - cell "1" [ref=e1901]
+          - row "@salesmedioker.mdn 1 1 – – – 1 – – – – 1 – –" [ref=e1902] [cursor=pointer]:
+            - cell "@salesmedioker.mdn" [ref=e1903]: "@salesmedioker.mdn"
+            - cell "1" [ref=e1905]
+            - cell "1" [ref=e1906]
+            - cell "–" [ref=e1907]
+            - cell "–" [ref=e1908]
+            - cell "–" [ref=e1909]
+            - cell "1" [ref=e1910]
+            - cell "–" [ref=e1911]
+            - cell "–" [ref=e1912]
+            - cell "–" [ref=e1913]
+            - cell "–" [ref=e1914]
+            - cell "1" [ref=e1915]
+            - cell "–" [ref=e1916]
+            - cell "–" [ref=e1917]
+          - row "@dennymitsubishibukittinggi 1 – – – – 1 – – – – – – –" [ref=e1918] [cursor=pointer]:
+            - cell "@dennymitsubishibukittinggi" [ref=e1919]: "@dennymitsubishibukittinggi"
+            - cell "1" [ref=e1921]
+            - cell "–" [ref=e1922]
+            - cell "–" [ref=e1923]
+            - cell "–" [ref=e1924]
+            - cell "–" [ref=e1925]
+            - cell "1" [ref=e1926]
+            - cell "–" [ref=e1927]
+            - cell "–" [ref=e1928]
+            - cell "–" [ref=e1929]
+            - cell "–" [ref=e1930]
+            - cell "–" [ref=e1931]
+            - cell "–" [ref=e1932]
+            - cell "–" [ref=e1933]
+    - generic [ref=e928]:
+      - generic [ref=e929]:
+        - generic [ref=e930]: 📈 Trend Chart
+        - generic [ref=e931]:
+          - button "Posts" [ref=e932] [cursor=pointer]
+          - button "Likes" [ref=e933] [cursor=pointer]
+          - button "Views" [ref=e934] [cursor=pointer]
+          - button "Eng. Rate" [ref=e935] [cursor=pointer]
+      - generic [ref=e936]:
+        - generic [ref=e1934]: "PINNED:"
+        - generic "Click to remove" [ref=e1935] [cursor=pointer]:
+          - text: "@rismamitsubishisolo"
+          - generic [ref=e1937]: ✕
+        - generic "Click to remove" [ref=e1938] [cursor=pointer]:
+          - text: "@mitsubishi.gresik"
+          - generic [ref=e1940]: ✕
+        - generic "Click to remove" [ref=e1941] [cursor=pointer]:
+          - text: "@sunstarmotorsurabaya"
+          - generic [ref=e1943]: ✕
+        - generic [ref=e1944]: + click matrix row to add
+    - generic [ref=e947]:
+      - generic [ref=e948]:
+        - generic [ref=e949]: 🔥 Top Viral Posts
+        - generic [ref=e950]: 10 posts · sorted by likes + views
+      - table [ref=e951]:
+        - rowgroup [ref=e952]:
+          - row "Account Date Type Likes ↕ Views ↕ Caption" [ref=e953]:
+            - columnheader [ref=e954] [cursor=pointer]
+            - columnheader "Account" [ref=e955] [cursor=pointer]
+            - columnheader "Date" [ref=e956] [cursor=pointer]
+            - columnheader "Type" [ref=e957] [cursor=pointer]
+            - columnheader "Likes ↕" [ref=e958] [cursor=pointer]
+            - columnheader "Views ↕" [ref=e959] [cursor=pointer]
+            - columnheader "Caption" [ref=e960] [cursor=pointer]
+            - columnheader [ref=e961] [cursor=pointer]
+        - rowgroup [ref=e962]:
+          - row "🎬 @rismamitsubishisolo Mar 2025 Video 1,240 18,900 Promo Xpander Cross Terbaik bulan ini! Dapatkan cashback... View →" [ref=e1945]:
+            - cell "🎬" [ref=e1946]:
+              - generic [ref=e1947]: 🎬
+            - cell "@rismamitsubishisolo" [ref=e1948]
+            - cell "Mar 2025" [ref=e1949]
+            - cell "Video" [ref=e1950]:
+              - generic [ref=e1951]: Video
+            - cell "1,240" [ref=e1952]:
+              - strong [ref=e1953]: 1,240
+            - cell "18,900" [ref=e1954]
+            - cell "Promo Xpander Cross Terbaik bulan ini! Dapatkan cashback..." [ref=e1955]
+            - cell "View →" [ref=e1956]:
+              - link "View →" [ref=e1957] [cursor=pointer]:
+                - /url: "#"
+          - row "🎬 @mitsubishi.gresik Jan 2025 Video 980 14,200 New Pajero Sport 2025 sudah tiba! Booking sekarang... View →" [ref=e1958]:
+            - cell "🎬" [ref=e1959]:
+              - generic [ref=e1960]: 🎬
+            - cell "@mitsubishi.gresik" [ref=e1961]
+            - cell "Jan 2025" [ref=e1962]
+            - cell "Video" [ref=e1963]:
+              - generic [ref=e1964]: Video
+            - cell "980" [ref=e1965]:
+              - strong [ref=e1966]: "980"
+            - cell "14,200" [ref=e1967]
+            - cell "New Pajero Sport 2025 sudah tiba! Booking sekarang..." [ref=e1968]
+            - cell "View →" [ref=e1969]:
+              - link "View →" [ref=e1970] [cursor=pointer]:
+                - /url: "#"
+          - row "🎬 @mitsubishi.dipopuri Feb 2025 Video 870 12,800 Test drive Eclipse Cross gratis setiap weekend... View →" [ref=e1971]:
+            - cell "🎬" [ref=e1972]:
+              - generic [ref=e1973]: 🎬
+            - cell "@mitsubishi.dipopuri" [ref=e1974]
+            - cell "Feb 2025" [ref=e1975]
+            - cell "Video" [ref=e1976]:
+              - generic [ref=e1977]: Video
+            - cell "870" [ref=e1978]:
+              - strong [ref=e1979]: "870"
+            - cell "12,800" [ref=e1980]
+            - cell "Test drive Eclipse Cross gratis setiap weekend..." [ref=e1981]
+            - cell "View →" [ref=e1982]:
+              - link "View →" [ref=e1983] [cursor=pointer]:
+                - /url: "#"
+          - row "🖼️ @sunstarmotorsurabaya Apr 2025 Sidecar 820 11,400 Lineup terbaru Mitsubishi 2025 semua ada di sini... View →" [ref=e1984]:
+            - cell "🖼️" [ref=e1985]:
+              - generic [ref=e1986]: 🖼️
+            - cell "@sunstarmotorsurabaya" [ref=e1987]
+            - cell "Apr 2025" [ref=e1988]
+            - cell "Sidecar" [ref=e1989]:
+              - generic [ref=e1990]: Sidecar
+            - cell "820" [ref=e1991]:
+              - strong [ref=e1992]: "820"
+            - cell "11,400" [ref=e1993]
+            - cell "Lineup terbaru Mitsubishi 2025 semua ada di sini..." [ref=e1994]
+            - cell "View →" [ref=e1995]:
+              - link "View →" [ref=e1996] [cursor=pointer]:
+                - /url: "#"
+          - row "🎬 @mitsubishi.gresik Mar 2025 Video 760 10,900 Outlander PHEV hadir di Gresik! Electric hybrid pertama... View →" [ref=e1997]:
+            - cell "🎬" [ref=e1998]:
+              - generic [ref=e1999]: 🎬
+            - cell "@mitsubishi.gresik" [ref=e2000]
+            - cell "Mar 2025" [ref=e2001]
+            - cell "Video" [ref=e2002]:
+              - generic [ref=e2003]: Video
+            - cell "760" [ref=e2004]:
+              - strong [ref=e2005]: "760"
+            - cell "10,900" [ref=e2006]
+            - cell "Outlander PHEV hadir di Gresik! Electric hybrid pertama..." [ref=e2007]
+            - cell "View →" [ref=e2008]:
+              - link "View →" [ref=e2009] [cursor=pointer]:
+                - /url: "#"
+          - row "🎬 @rismamitsubishisolo Nov 2024 Video 710 9,800 Akhir tahun promo besar-besaran! Diskon hingga 30 juta... View →" [ref=e2010]:
+            - cell "🎬" [ref=e2011]:
+              - generic [ref=e2012]: 🎬
+            - cell "@rismamitsubishisolo" [ref=e2013]
+            - cell "Nov 2024" [ref=e2014]
+            - cell "Video" [ref=e2015]:
+              - generic [ref=e2016]: Video
+            - cell "710" [ref=e2017]:
+              - strong [ref=e2018]: "710"
+            - cell "9,800" [ref=e2019]
+            - cell "Akhir tahun promo besar-besaran! Diskon hingga 30 juta..." [ref=e2020]
+            - cell "View →" [ref=e2021]:
+              - link "View →" [ref=e2022] [cursor=pointer]:
+                - /url: "#"
+          - row "🎬 @bosowaberlianurip Feb 2025 Video 680 9,200 Mitsubishi L300 masih jadi andalan! Harga terjangkau... View →" [ref=e2023]:
+            - cell "🎬" [ref=e2024]:
+              - generic [ref=e2025]: 🎬
+            - cell "@bosowaberlianurip" [ref=e2026]
+            - cell "Feb 2025" [ref=e2027]
+            - cell "Video" [ref=e2028]:
+              - generic [ref=e2029]: Video
+            - cell "680" [ref=e2030]:
+              - strong [ref=e2031]: "680"
+            - cell "9,200" [ref=e2032]
+            - cell "Mitsubishi L300 masih jadi andalan! Harga terjangkau..." [ref=e2033]
+            - cell "View →" [ref=e2034]:
+              - link "View →" [ref=e2035] [cursor=pointer]:
+                - /url: "#"
+          - row "🎬 @sunstarprimamotorfatmawati Jan 2025 Video 640 8,700 Xforce terbaru sudah bisa dipesan! Spesifikasi lengkap... View →" [ref=e2036]:
+            - cell "🎬" [ref=e2037]:
+              - generic [ref=e2038]: 🎬
+            - cell "@sunstarprimamotorfatmawati" [ref=e2039]
+            - cell "Jan 2025" [ref=e2040]
+            - cell "Video" [ref=e2041]:
+              - generic [ref=e2042]: Video
+            - cell "640" [ref=e2043]:
+              - strong [ref=e2044]: "640"
+            - cell "8,700" [ref=e2045]
+            - cell "Xforce terbaru sudah bisa dipesan! Spesifikasi lengkap..." [ref=e2046]
+            - cell "View →" [ref=e2047]:
+              - link "View →" [ref=e2048] [cursor=pointer]:
+                - /url: "#"
+          - row "🎬 @mitsubishidipo.arengka Mar 2025 Video 590 8,100 Galant turun harga? Cek promo spesial bulan ini... View →" [ref=e2049]:
+            - cell "🎬" [ref=e2050]:
+              - generic [ref=e2051]: 🎬
+            - cell "@mitsubishidipo.arengka" [ref=e2052]
+            - cell "Mar 2025" [ref=e2053]
+            - cell "Video" [ref=e2054]:
+              - generic [ref=e2055]: Video
+            - cell "590" [ref=e2056]:
+              - strong [ref=e2057]: "590"
+            - cell "8,100" [ref=e2058]
+            - cell "Galant turun harga? Cek promo spesial bulan ini..." [ref=e2059]
+            - cell "View →" [ref=e2060]:
+              - link "View →" [ref=e2061] [cursor=pointer]:
+                - /url: "#"
+          - row "🖼️ @mitsubishibosowakairagimanado Dec 2024 Sidecar 540 7,600 Akhir tahun beli Mitsubishi dapat hadiah TV + AC... View →" [ref=e2062]:
+            - cell "🖼️" [ref=e2063]:
+              - generic [ref=e2064]: 🖼️
+            - cell "@mitsubishibosowakairagimanado" [ref=e2065]
+            - cell "Dec 2024" [ref=e2066]
+            - cell "Sidecar" [ref=e2067]:
+              - generic [ref=e2068]: Sidecar
+            - cell "540" [ref=e2069]:
+              - strong [ref=e2070]: "540"
+            - cell "7,600" [ref=e2071]
+            - cell "Akhir tahun beli Mitsubishi dapat hadiah TV + AC..." [ref=e2072]
+            - cell "View →" [ref=e2073]:
+              - link "View →" [ref=e2074] [cursor=pointer]:
+                - /url: "#"

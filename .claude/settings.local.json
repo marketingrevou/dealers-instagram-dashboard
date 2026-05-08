@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-Content \"C:\\\\Users\\\\Lenovo\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Lenovo-Documents-02-RevoU-01--AI-Apps-Mitsubishi\\\\54597b23-5831-47e7-9a50-06eea0af3528\\\\tasks\\\\bv4nwanx4.output\")",
+      "Bash(Select-Object -Last 80)",
+      "Bash(powershell -Command \"Get-Content 'C:\\\\Users\\\\Lenovo\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Lenovo-Documents-02-RevoU-01--AI-Apps-Mitsubishi\\\\54597b23-5831-47e7-9a50-06eea0af3528\\\\tasks\\\\bv4nwanx4.output' | Select-Object -Last 80 | Out-String\")",
+      "Bash(node -e ' *)",
+      "Bash(node weekly-report.js)",
+      "Bash(node scrape-missing.js)",
+      "Bash(powershell -Command \"Get-Content 'c:\\\\Users\\\\Lenovo\\\\Documents\\\\02_RevoU\\\\01. AI Apps\\\\Mitsubishi\\\\mitsubishi website.md' -TotalCount 50\")",
+      "Bash(npx --yes serve . --listen 3131)",
+      "Bash(Start-Sleep -Seconds 3)",
+      "Bash(Invoke-WebRequest -Uri \"http://localhost:3131/wireframe.html\" -UseBasicParsing)",
+      "Bash(Select-Object -ExpandProperty StatusCode)",
+      "PowerShell(Start-Sleep -Seconds 2; \\(Invoke-WebRequest -Uri \"http://localhost:3131/wireframe.html\" -UseBasicParsing\\).StatusCode)",
+      "Bash(node -e \"const d=require\\('./raw-posts.json'\\); console.log\\('Total posts:', d.length\\); console.log\\('Sample:', JSON.stringify\\(d[0], null, 2\\)\\); const accounts=[...new Set\\(d.map\\(p=>p._account\\)\\)]; console.log\\('Accounts \\('+accounts.length+'\\):', accounts.slice\\(0,5\\)\\);\")",
+      "Bash(node generate-dashboard.js)",
+      "Bash(grep -n \"\\\\\\\\\\\\\\\\'\" generate-dashboard.js)",
+      "Bash(Select-String -Path \"c:\\\\Users\\\\Lenovo\\\\Documents\\\\02_RevoU\\\\01. AI Apps\\\\Mitsubishi\\\\dashboard.html\" -Pattern \"likes|digg|heart|p\\\\.likes|viral\" -Context 2)",
+      "Bash(Select-Object -First 60)",
+      "Bash(Out-String)",
+      "Bash(sed -n '79,100p' \"c:/Users/Lenovo/Documents/02_RevoU/01. AI Apps/Mitsubishi/dashboard.html\")",
+      "Bash(sed -n '288,320p' \"c:/Users/Lenovo/Documents/02_RevoU/01. AI Apps/Mitsubishi/dashboard.html\")",
+      "Bash(sed -n '370,415p' \"c:/Users/Lenovo/Documents/02_RevoU/01. AI Apps/Mitsubishi/dashboard.html\")",
+      "PowerShell(python3 \"c:/tmp/fix_dashboard.py\")",
+      "PowerShell(python3 \"c:/tmp/embed_thumbs.py\")",
+      "PowerShell(Get-Process -Name \"chrome\",\"chromium\" -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Force)",
+      "PowerShell(Start-Process python3 -ArgumentList \"-m\",\"http.server\",\"8765\",\"--directory\",\"c:\\\\Users\\\\Lenovo\\\\Documents\\\\02_RevoU\\\\01. AI Apps\\\\Mitsubishi\" -WindowStyle Hidden)",
+      "PowerShell(netstat -ano)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8765/dashboard.html)",
+      "PowerShell(python3 \"c:/tmp/patch_dashboard.py\")",
+      "PowerShell(python3 \"c:/tmp/fetch_profile_pics.py\")",
+      "PowerShell(node -e \"require\\('playwright'\\)\" 2>&1)",
+      "PowerShell(node -e \"require\\('@playwright/test'\\)\" 2>&1)",
+      "PowerShell(python3 \"c:/tmp/fetch_pics.py\")"
+    ]
+  }
+}

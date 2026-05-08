@@ -1,0 +1,77 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - img "Mitsubishi Motors" [ref=e5]
+      - generic [ref=e6]:
+        - heading "Mitsubishi Motors Dealer Dashboard" [level=1] [ref=e7]
+        - generic [ref=e8]: Instagram Performance · 22 Accounts · Jul 2025 – May 2026 · 2,186 posts
+    - generic [ref=e9]:
+      - generic [ref=e10]: "\"Drive Your Ambition\""
+      - generic [ref=e11]: "Generated: May 8, 2026, 11:53 PM"
+  - generic [ref=e12]:
+    - generic [ref=e13]: Range
+    - generic [ref=e14]:
+      - button "Last 7D" [ref=e15] [cursor=pointer]
+      - button "Last 30D" [ref=e16] [cursor=pointer]
+      - button "Last 3M" [ref=e17] [cursor=pointer]
+      - button "Last 6M" [ref=e18] [cursor=pointer]
+      - button "All" [ref=e19] [cursor=pointer]
+    - generic [ref=e21]: Custom
+    - textbox [ref=e22]: 2025-07-01
+    - generic [ref=e23]: →
+    - textbox [ref=e24]: 2026-05-08
+    - generic [ref=e26]: View
+    - generic [ref=e27]:
+      - button "Monthly" [ref=e28] [cursor=pointer]
+      - button "Weekly" [ref=e29] [cursor=pointer]
+    - generic [ref=e30]: All · 11 months
+  - generic [ref=e31]:
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - generic [ref=e35]: ◆
+        - text: Top Viral Posts
+      - generic [ref=e36]: Top 10 by likes + views
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - generic [ref=e41]: ◆
+          - text: Account Rankings
+        - generic [ref=e42]: Click column to sort · Click row for drill-down
+      - table [ref=e44]:
+        - rowgroup [ref=e45]:
+          - row "# Account Posts ↕ Avg Likes/Post ↕ Avg Views/Post ↕ Consistency Last Posted Status" [ref=e46]:
+            - columnheader "#" [ref=e47] [cursor=pointer]
+            - columnheader "Account" [ref=e48] [cursor=pointer]
+            - columnheader "Posts ↕" [ref=e49] [cursor=pointer]
+            - columnheader "Avg Likes/Post ↕" [ref=e50] [cursor=pointer]
+            - columnheader "Avg Views/Post ↕" [ref=e51] [cursor=pointer]
+            - columnheader "Consistency" [ref=e52] [cursor=pointer]
+            - columnheader "Last Posted" [ref=e53] [cursor=pointer]
+            - columnheader "Status" [ref=e54] [cursor=pointer]
+        - rowgroup
+      - button "▼ Show all 22 accounts" [ref=e56] [cursor=pointer]
+    - generic [ref=e58]:
+      - generic [ref=e59]:
+        - generic [ref=e60]: ◆
+        - text: Trend Chart
+        - generic [ref=e61]: · All accounts total
+      - generic [ref=e62]:
+        - button "Posts" [ref=e63] [cursor=pointer]
+        - button "Likes" [ref=e64] [cursor=pointer]
+        - button "Views" [ref=e65] [cursor=pointer]
+        - button "Eng Rate" [ref=e66] [cursor=pointer]
+    - generic [ref=e70]:
+      - generic [ref=e71]:
+        - generic [ref=e72]:
+          - generic [ref=e73]: ◆
+          - text: Performance Matrix
+          - generic [ref=e74]: · Click row to pin in trend chart
+        - generic [ref=e75]:
+          - button "Posts" [ref=e76] [cursor=pointer]
+          - button "Likes" [ref=e77] [cursor=pointer]
+          - button "Views" [ref=e78] [cursor=pointer]
+      - generic:
+        - table:
+          - rowgroup
+          - rowgroup
+      - button "▼ Show all 22 accounts" [ref=e80] [cursor=pointer]

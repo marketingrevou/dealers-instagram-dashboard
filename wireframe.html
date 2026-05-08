@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mitsubishi Dealer Dashboard – Wireframe</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f0f2f5; color: #1a1a2e; font-size: 14px; }
+
+  /* Header */
+  .header { background: #c00; color: white; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .header h1 { font-size: 18px; font-weight: 700; letter-spacing: 0.5px; }
+  .header .subtitle { font-size: 12px; opacity: 0.8; margin-top: 2px; }
+
+  /* Filter bar */
+  .filter-bar { background: white; border-bottom: 1px solid #e0e0e0; padding: 10px 24px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
+  .filter-label { font-size: 12px; color: #666; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+  .btn-group { display: flex; gap: 4px; }
+  .btn { padding: 5px 12px; border-radius: 6px; border: 1px solid #d0d0d0; background: white; cursor: pointer; font-size: 12px; color: #444; transition: all 0.15s; }
+  .btn:hover { background: #f5f5f5; }
+  .btn.active { background: #c00; color: white; border-color: #c00; }
+  .divider { width: 1px; height: 24px; background: #e0e0e0; }
+  .date-input { padding: 5px 8px; border: 1px solid #d0d0d0; border-radius: 6px; font-size: 12px; color: #444; }
+  .range-badge { font-size: 11px; background: #fff3f3; color: #c00; border: 1px solid #fcc; border-radius: 12px; padding: 2px 10px; font-weight: 600; }
+
+  /* Main layout */
+  .main { padding: 20px 24px; display: flex; flex-direction: column; gap: 20px; }
+
+  /* KPI cards */
+  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .kpi-card { background: white; border-radius: 10px; padding: 18px 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  .kpi-label { font-size: 11px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+  .kpi-value { font-size: 28px; font-weight: 700; color: #1a1a2e; margin: 6px 0 2px; }
+  .kpi-sub { font-size: 11px; color: #aaa; }
+  .kpi-card.danger .kpi-value { color: #c00; }
+
+  /* Insights */
+  .insights { background: white; border-radius: 10px; padding: 16px 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  .section-title { font-size: 13px; font-weight: 700; color: #1a1a2e; margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+  .insight-list { display: flex; flex-direction: column; gap: 8px; }
+  .insight-item { display: flex; align-items: flex-start; gap: 10px; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  .insight-item.red    { background: #fff5f5; border-left: 3px solid #e53e3e; }
+  .insight-item.green  { background: #f0fff4; border-left: 3px solid #38a169; }
+  .insight-item.orange { background: #fffaf0; border-left: 3px solid #dd6b20; }
+  .insight-item.blue   { background: #ebf8ff; border-left: 3px solid #3182ce; }
+  .insight-item.yellow { background: #fffff0; border-left: 3px solid #d69e2e; }
+  .insight-icon { font-size: 15px; flex-shrink: 0; }
+  .insight-text strong { font-weight: 600; }
+
+  /* Cards */
+  .card { background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); overflow: hidden; }
+  .card-header { padding: 14px 20px; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  .sort-hint { font-size: 11px; color: #aaa; }
+
+  /* Rankings table */
+  table { width: 100%; border-collapse: collapse; }
+  th { padding: 10px 14px; text-align: left; font-size: 11px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.4px; background: #fafafa; border-bottom: 1px solid #f0f0f0; cursor: pointer; user-select: none; white-space: nowrap; }
+  th:hover { color: #c00; }
+  td { padding: 10px 14px; border-bottom: 1px solid #f8f8f8; font-size: 13px; }
+  tr:last-child td { border-bottom: none; }
+  tr.top-row td    { background: #f0fff4; }
+  tr.bottom-row td { background: #fff5f5; }
+  tr.dormant-row td { background: #fffaf0; }
+  tr.account-row { cursor: pointer; transition: background 0.1s; }
+  tr.account-row:hover td { background: #f5f5f5 !important; }
+  .badge { display: inline-block; padding: 2px 7px; border-radius: 20px; font-size: 10px; font-weight: 600; }
+  .badge.green  { background: #c6f6d5; color: #276749; }
+  .badge.red    { background: #fed7d7; color: #9b2c2c; }
+  .badge.orange { background: #feebc8; color: #7b341e; }
+  .consistency-bar { display: flex; align-items: center; gap: 6px; }
+  .bar-track { width: 48px; height: 6px; background: #eee; border-radius: 3px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 3px; background: #c00; }
+
+  /* Drill-down */
+  .drill-down { display: none; background: #fafafa; border-top: 1px solid #f0f0f0; }
+  .drill-down.open { display: table-row-group; }
+  .drill-down td { padding: 16px 20px; }
+  .drill-mini { display: flex; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .drill-stat { background: white; border-radius: 8px; padding: 10px 16px; border: 1px solid #eee; }
+  .drill-stat-label { font-size: 10px; color: #999; text-transform: uppercase; font-weight: 600; }
+  .drill-stat-value { font-size: 18px; font-weight: 700; color: #1a1a2e; margin-top: 2px; }
+  .top-posts { display: flex; gap: 10px; flex-wrap: wrap; }
+  .post-thumb { width: 72px; text-align: center; }
+  .post-thumb-placeholder { width: 72px; height: 72px; background: linear-gradient(135deg, #ddd 0%, #ccc 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+  .post-thumb .post-likes { font-size: 10px; color: #666; margin-top: 3px; }
+
+  /* Matrix */
+  .matrix-wrap { overflow-x: auto; }
+  .matrix-table { min-width: 600px; border-collapse: separate; border-spacing: 0; }
+  .matrix-table th, .matrix-table td { padding: 8px 10px; white-space: nowrap; font-size: 12px; }
+
+  /* Sticky first column */
+  .matrix-table .sticky-col {
+    position: sticky; left: 0; z-index: 2;
+    background: white;
+    min-width: 160px; max-width: 160px; width: 160px;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    box-shadow: 2px 0 6px rgba(0,0,0,0.07);
+    border-right: 1px solid #eee;
+  }
+  .matrix-table thead .sticky-col {
+    background: #fafafa; z-index: 3;
+  }
+  .matrix-table tr.pinned .sticky-col { background: #fff8f8; }
+
+  .cell { text-align: center; border-radius: 4px; font-weight: 600; font-size: 12px; }
+
+  /* Pinned row styling — left border uses inline style for color */
+  .matrix-table tr.pinned td { background: #fff8f8 !important; }
+  .matrix-table tr.pinned .sticky-col { font-weight: 700; }
+  .pin-indicator { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+
+  /* Trend chart */
+  .chart-wrap { padding: 16px 20px; }
+  .pinned-strip { padding: 10px 20px 0; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .pinned-pill { display: flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; border: 1.5px solid; cursor: pointer; transition: opacity 0.15s; }
+  .pinned-pill:hover { opacity: 0.75; }
+  .pinned-pill .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .pinned-pill .remove { margin-left: 4px; opacity: 0.5; font-size: 12px; }
+  .pinned-empty { font-size: 12px; color: #aaa; padding: 8px 20px; }
+
+  /* Viral posts */
+  .viral-table th, .viral-table td { padding: 10px 12px; }
+  .viral-thumb { width: 48px; height: 48px; background: linear-gradient(135deg, #ddd, #ccc); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+  .post-link { color: #c00; text-decoration: none; font-weight: 600; }
+  .post-link:hover { text-decoration: underline; }
+  .caption-text { max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #555; }
+
+  @media (max-width: 900px) {
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* Modal overlay */
+  .modal-backdrop { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:1000; align-items:center; justify-content:center; padding:20px; }
+  .modal-backdrop.open { display:flex; }
+  .modal-card { background:white; border-radius:12px; width:700px; max-width:94vw; max-height:88vh; display:flex; flex-direction:column; box-shadow:0 20px 60px rgba(0,0,0,0.3); }
+  .modal-header { padding:18px 20px 14px; border-bottom:1px solid #f0f0f0; display:flex; align-items:flex-start; justify-content:space-between; flex-shrink:0; }
+  .modal-title { font-size:15px; font-weight:700; color:#1a1a2e; }
+  .modal-subtitle { font-size:12px; color:#888; margin-top:2px; }
+  .modal-close { background:none; border:none; font-size:22px; cursor:pointer; color:#aaa; line-height:1; padding:4px 8px; border-radius:6px; flex-shrink:0; }
+  .modal-close:hover { background:#f0f0f0; color:#555; }
+  .modal-body { padding:16px 20px; overflow-y:auto; flex:1; }
+  .modal-stats { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px; }
+  .modal-stat { background:#f8f8f8; border-radius:8px; padding:10px 14px; flex:1; min-width:90px; }
+  .modal-stat-label { font-size:10px; color:#999; text-transform:uppercase; font-weight:600; }
+  .modal-stat-value { font-size:18px; font-weight:700; color:#1a1a2e; margin-top:2px; }
+  .modal-posts-table { width:100%; border-collapse:collapse; }
+  .modal-posts-table th { padding:8px 10px; text-align:left; font-size:11px; font-weight:600; color:#888; text-transform:uppercase; background:#fafafa; border-bottom:1px solid #eee; }
+  .modal-posts-table td { padding:8px 10px; border-bottom:1px solid #f5f5f5; font-size:12px; vertical-align:middle; }
+  .modal-posts-table tr:last-child td { border-bottom:none; }
+  .modal-thumb { width:40px; height:40px; background:linear-gradient(135deg,#ddd,#ccc); border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0; }
+
+  /* Sticky thead for scrollable tables */
+  .scroll-wrap { overflow-y: auto; }
+  .scroll-wrap thead th { position: sticky; top: 0; z-index: 2; }
+  .matrix-wrap.scroll-wrap thead th { z-index: 4; }
+  .matrix-wrap.scroll-wrap thead .sticky-col { z-index: 5; }
+
+  /* Expand toggle button */
+  .expand-bar { padding: 8px 20px; border-top: 1px solid #f0f0f0; }
+  .expand-btn { width: 100%; background: none; border: none; cursor: pointer; font-size: 12px; color: #888; padding: 4px 0; text-align: center; }
+  .expand-btn:hover { color: #c00; }
+
+  /* Insights collapsible */
+  .insights-header { display:flex; align-items:center; justify-content:space-between; cursor:pointer; user-select:none; padding-bottom:4px; }
+  .insight-count-badge { display:inline-block; background:#fff3f3; color:#c00; border:1px solid #fcc; border-radius:10px; padding:1px 8px; font-size:11px; font-weight:700; margin-left:6px; }
+  .insights-toggle { font-size:12px; color:#aaa; transition:transform 0.2s; display:inline-block; }
+  .insights-toggle.open { transform:rotate(180deg); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div>
+    <h1>🚗 Mitsubishi Dealer Instagram Dashboard</h1>
+    <div class="subtitle">22 dealer accounts · Data from Jan 2024</div>
+  </div>
+  <div style="font-size:12px;opacity:0.8;">Last updated: May 8, 2025</div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <span class="filter-label">Range</span>
+  <div class="btn-group" id="rangeGroup">
+    <button class="btn" onclick="setRange(this,'3m')">Last 3M</button>
+    <button class="btn" onclick="setRange(this,'6m')">Last 6M</button>
+    <button class="btn active" onclick="setRange(this,'all')">All (Jan 2024)</button>
+  </div>
+  <div class="divider"></div>
+  <span class="filter-label">Custom</span>
+  <input type="date" class="date-input" id="dateFrom" value="2024-01-01" onchange="setRange(null,'custom')">
+  <span style="color:#aaa;font-size:12px;">→</span>
+  <input type="date" class="date-input" id="dateTo" value="2025-05-08" onchange="setRange(null,'custom')">
+  <div class="divider"></div>
+  <span class="filter-label">View</span>
+  <div class="btn-group" id="granGroup">
+    <button class="btn active" onclick="setGran(this,'monthly')">Monthly</button>
+    <button class="btn" onclick="setGran(this,'weekly')">Weekly</button>
+  </div>
+  <span class="range-badge" id="rangeBadge">Jan 2024 – May 2025 · 17 months</span>
+</div>
+
+<div class="main">
+
+  <!-- KPI CARDS -->
+  <div class="kpi-grid" id="kpiGrid">
+    <!-- injected by renderKPIs() -->
+  </div>
+
+  <!-- INSIGHTS -->
+  <div class="insights">
+    <div class="insights-header" onclick="toggleInsights()">
+      <div class="section-title" style="margin:0;">⚡ Insights
+        <span class="insight-count-badge" id="insightCount">5</span>
+        <span style="font-size:11px;font-weight:400;color:#aaa;" id="insightRange"></span>
+      </div>
+      <span class="insights-toggle" id="insightToggle">▼</span>
+    </div>
+    <div class="insight-list" id="insightList" style="display:none;margin-top:12px;"></div>
+  </div>
+
+  <!-- ACCOUNT RANKINGS -->
+  <div class="card">
+    <div class="card-header">
+      <div class="section-title" style="margin:0;">🏆 Account Rankings</div>
+      <div class="sort-hint">Click column header to sort · Click row for details</div>
+    </div>
+    <div id="rankScroll" class="scroll-wrap" style="max-height:320px;">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th><th>Account</th><th>Posts ↕</th><th>Avg Likes/Post ↕</th>
+            <th>Avg Views/Post ↕</th>
+            <th>Consistency</th><th>Last Posted</th><th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="rankBody"></tbody>
+      </table>
+    </div>
+    <div class="expand-bar">
+      <button class="expand-btn" id="rankToggleBtn" onclick="toggleRankings()">▼ Show all 22 accounts</button>
+    </div>
+  </div>
+
+  <!-- TREND CHART -->
+  <div class="card" id="trendSection">
+    <div class="card-header">
+      <div class="section-title" style="margin:0;">📈 Trend Chart
+        <span style="font-size:11px;font-weight:400;color:#aaa;" id="trendModeLabel">· All accounts total</span>
+      </div>
+      <div class="btn-group" id="trendMetricGroup">
+        <button class="btn active" onclick="setTrendMetric(this,'posts')">Posts</button>
+        <button class="btn" onclick="setTrendMetric(this,'likes')">Likes</button>
+        <button class="btn" onclick="setTrendMetric(this,'views')">Views</button>
+      </div>
+    </div>
+    <!-- Pinned accounts strip -->
+    <div id="pinnedStrip" class="pinned-strip"></div>
+    <div id="trendHint" style="display:none;margin:0 20px 0;padding:7px 12px;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;font-size:12px;color:#92400e;">
+      💡 Only 3 data points in Monthly view. Switch to <strong>Weekly</strong> for a more detailed trend.
+    </div>
+    <div class="chart-wrap">
+      <canvas id="trendChart" height="90"></canvas>
+    </div>
+  </div>
+
+  <!-- PERFORMANCE MATRIX -->
+  <div class="card">
+    <div class="card-header">
+      <div class="section-title" style="margin:0;">📋 Performance Matrix
+        <span style="font-size:11px;font-weight:400;color:#aaa;">· Click row to pin in trend chart above</span>
+      </div>
+      <div class="btn-group" id="matrixMetricGroup">
+        <button class="btn active" onclick="setMatrixMetric(this,'posts')">Posts</button>
+        <button class="btn" onclick="setMatrixMetric(this,'likes')">Likes</button>
+        <button class="btn" onclick="setMatrixMetric(this,'views')">Views</button>
+      </div>
+    </div>
+    <div class="matrix-wrap scroll-wrap" id="matrixScroll" style="max-height:360px;">
+      <table class="matrix-table">
+        <thead id="matrixHead"></thead>
+        <tbody id="matrixBody"></tbody>
+      </table>
+    </div>
+    <div class="expand-bar">
+      <button class="expand-btn" id="matrixToggleBtn" onclick="toggleMatrix()">▼ Show all 22 accounts</button>
+    </div>
+  </div>
+
+  <!-- VIRAL POSTS -->
+  <div class="card">
+    <div class="card-header">
+      <div class="section-title" style="margin:0;">🔥 Top Viral Posts</div>
+      <div class="sort-hint" id="viralHint">Sorted by likes + views</div>
+    </div>
+    <table class="viral-table">
+      <thead>
+        <tr>
+          <th></th><th>Account</th><th>Date</th><th>Type</th>
+          <th>Likes ↕</th><th>Views ↕</th><th>Caption</th><th></th>
+        </tr>
+      </thead>
+      <tbody id="viralBody"></tbody>
+    </table>
+  </div>
+
+</div><!-- /main -->
+
+<!-- ACCOUNT DRILL-DOWN MODAL -->
+<div class="modal-backdrop" id="drillModal" onclick="handleModalClick(event)">
+  <div class="modal-card" id="drillCard">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title" id="modalTitle">@account</div>
+        <div class="modal-subtitle" id="modalSubtitle">Account drill-down</div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">×</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+// ── Chart colors (shared between matrix pins and trend chart) ─────────────────
+const COLORS = ['#c00','#2563eb','#16a34a','#d97706','#7c3aed','#0891b2','#be185d','#065f46','#b45309','#1e40af'];
+
+// ── All months & weeks (full dataset) ────────────────────────────────────────
+const ALL_MONTHS = [
+  "Jan 2024","Feb 2024","Mar 2024","Apr 2024","May 2024","Jun 2024",
+  "Jul 2024","Aug 2024","Sep 2024","Oct 2024","Nov 2024","Dec 2024",
+  "Jan 2025","Feb 2025","Mar 2025","Apr 2025","May 2025"
+];
+// Start-of-month dates for filtering (local time to match date input parsing)
+const MON_IDX = {Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};
+const ALL_MONTH_DATES = ALL_MONTHS.map(m => {
+  const [mon, year] = m.split(' ');
+  return new Date(+year, MON_IDX[mon], 1);
+});
+
+// 26 weeks ending May 12 2025 (Mondays) — with explicit years for filtering
+const ALL_WEEKS = [
+  "Nov 18","Nov 25","Dec 2","Dec 9","Dec 16","Dec 23","Dec 30",
+  "Jan 6","Jan 13","Jan 20","Jan 27",
+  "Feb 3","Feb 10","Feb 17","Feb 24",
+  "Mar 3","Mar 10","Mar 17","Mar 24","Mar 31",
+  "Apr 7","Apr 14","Apr 21","Apr 28",
+  "May 5","May 12"
+];
+const ALL_WEEK_DATES = [
+  new Date("2024-11-18"),new Date("2024-11-25"),new Date("2024-12-02"),
+  new Date("2024-12-09"),new Date("2024-12-16"),new Date("2024-12-23"),new Date("2024-12-30"),
+  new Date("2025-01-06"),new Date("2025-01-13"),new Date("2025-01-20"),new Date("2025-01-27"),
+  new Date("2025-02-03"),new Date("2025-02-10"),new Date("2025-02-17"),new Date("2025-02-24"),
+  new Date("2025-03-03"),new Date("2025-03-10"),new Date("2025-03-17"),new Date("2025-03-24"),new Date("2025-03-31"),
+  new Date("2025-04-07"),new Date("2025-04-14"),new Date("2025-04-21"),new Date("2025-04-28"),
+  new Date("2025-05-05"),new Date("2025-05-12"),
+];
+
+// Range slices (indices into ALL_MONTHS / ALL_WEEKS)
+const RANGE_SLICES = {
+  monthly: { all:'0:17', '6m':'11:17', '3m':'14:17' },
+  weekly:  { all:'0:26', '6m':'0:26',  '3m':'13:26' }
+};
+
+function slice(arr, spec) {
+  const [a,b] = spec.split(':').map(Number);
+  return arr.slice(a, b);
+}
+
+// ── Account data ──────────────────────────────────────────────────────────────
+// followers = real scraped counts (latest, fixed — not affected by date range)
+const ACCOUNTS = [
+  { name:"rismamitsubishisolo",          posts:300, likes:89400, views:312000, followers:253,  consistency:85, lastDays:2,  status:"active" },
+  { name:"mitsubishi.gresik",            posts:286, likes:72100, views:284000, followers:547,  consistency:78, lastDays:1,  status:"active" },
+  { name:"mitsubishi.dipopuri",          posts:300, likes:61200, views:198000, followers:1464, consistency:80, lastDays:3,  status:"active" },
+  { name:"sunstarmotorsurabaya",         posts:214, likes:54300, views:176000, followers:1433, consistency:72, lastDays:5,  status:"active" },
+  { name:"sunstarprimamotorfatmawati",   posts:295, likes:48900, views:142000, followers:1760, consistency:74, lastDays:4,  status:"active" },
+  { name:"mitsubishidipo.arengka",       posts:236, likes:41200, views:118000, followers:1575, consistency:65, lastDays:6,  status:"active" },
+  { name:"mitsubishibosowakairagimanado",posts:216, likes:38700, views:102000, followers:2928, consistency:60, lastDays:7,  status:"active" },
+  { name:"bosowaberlianurip",            posts:190, likes:32100, views:89000,  followers:1845, consistency:58, lastDays:9,  status:"active" },
+  { name:"dena_century",                 posts:125, likes:21400, views:67000,  followers:3836, consistency:45, lastDays:11, status:"active" },
+  { name:"mitsubishimedan_melvin",       posts:108, likes:18900, views:54000,  followers:2995, consistency:40, lastDays:8,  status:"active" },
+  { name:"halena_mitsubishibandung",     posts:73,  likes:12400, views:38000,  followers:1754, consistency:35, lastDays:12, status:"active" },
+  { name:"halomitsubishi",               posts:73,  likes:11200, views:31000,  followers:44,   consistency:32, lastDays:10, status:"active" },
+  { name:"mobil_mitsubishi.co.id",       posts:65,  likes:9800,  views:27000,  followers:1585, consistency:28, lastDays:13, status:"active" },
+  { name:"sunstarmotorkenjeran",         posts:52,  likes:8100,  views:22000,  followers:965,  consistency:25, lastDays:14, status:"active" },
+  { name:"atho_mitsubishiserang",        posts:59,  likes:7400,  views:19000,  followers:275,  consistency:22, lastDays:15, status:"active" },
+  { name:"bumenredjaabadi_sidoarjo",     posts:57,  likes:6900,  views:16000,  followers:684,  consistency:20, lastDays:16, status:"active" },
+  { name:"mitsubishi_tangeranggg",       posts:46,  likes:5800,  views:13000,  followers:1693, consistency:18, lastDays:17, status:"active" },
+  { name:"mitsubishicibubur.linda",      posts:45,  likes:4900,  views:11000,  followers:673,  consistency:16, lastDays:19, status:"active" },
+  { name:"marketingmobil137.id",         posts:38,  likes:3800,  views:8000,   followers:1154, consistency:14, lastDays:20, status:"active" },
+  { name:"ramdhan_mitsubishijakarta",    posts:24,  likes:2400,  views:5000,   followers:40,   consistency:10, lastDays:13, status:"active" },
+  { name:"salesmedioker.mdn",            posts:17,  likes:1100,  views:2000,   followers:576,  consistency:5,  lastDays:21, status:"dormant" },
+  { name:"dennymitsubishibukittinggi",   posts:15,  likes:800,   views:1500,   followers:448,  consistency:4,  lastDays:18, status:"dormant" },
+];
+
+// Generate dummy time-series per account (seeded for consistency)
+function seededRand(seed) {
+  let s = seed;
+  return () => { s = (s * 16807 + 0) % 2147483647; return (s - 1) / 2147483646; };
+}
+const matrixData = ACCOUNTS.map((a, ai) => {
+  const rand = seededRand(ai * 31 + 7);
+  const base = a.posts / ALL_MONTHS.length;
+  return {
+    name: a.name,
+    months: ALL_MONTHS.map(() => Math.max(0, Math.round(base * (0.4 + rand() * 1.4)))),
+    weeks:  ALL_WEEKS.map(()  => Math.max(0, Math.round((a.posts/52) * (0.3 + rand() * 1.6)))),
+    // scaled likes/views per period
+    mlikes:  ALL_MONTHS.map(() => Math.max(0, Math.round((a.likes/ALL_MONTHS.length)*(0.4+rand()*1.4)))),
+    mviews:  ALL_MONTHS.map(() => Math.max(0, Math.round((a.views/ALL_MONTHS.length)*(0.4+rand()*1.4)))),
+    wlikes:  ALL_WEEKS.map(()  => Math.max(0, Math.round((a.likes/52)*(0.3+rand()*1.6)))),
+    wviews:  ALL_WEEKS.map(()  => Math.max(0, Math.round((a.views/52)*(0.3+rand()*1.6)))),
+  };
+});
+
+// Viral posts
+const ALL_VIRAL = [
+  { account:"rismamitsubishisolo",          date:"Mar 2025", month:"Jan 2025", likes:1240, views:18900, type:"Video",   caption:"Promo Xpander Cross Terbaik bulan ini! Dapatkan cashback..." },
+  { account:"mitsubishi.gresik",            date:"Jan 2025", month:"Jan 2025", likes:980,  views:14200, type:"Video",   caption:"New Pajero Sport 2025 sudah tiba! Booking sekarang..." },
+  { account:"mitsubishi.dipopuri",          date:"Feb 2025", month:"Feb 2025", likes:870,  views:12800, type:"Video",   caption:"Test drive Eclipse Cross gratis setiap weekend..." },
+  { account:"sunstarmotorsurabaya",         date:"Apr 2025", month:"Apr 2025", likes:820,  views:11400, type:"Sidecar", caption:"Lineup terbaru Mitsubishi 2025 semua ada di sini..." },
+  { account:"mitsubishi.gresik",            date:"Mar 2025", month:"Mar 2025", likes:760,  views:10900, type:"Video",   caption:"Outlander PHEV hadir di Gresik! Electric hybrid pertama..." },
+  { account:"rismamitsubishisolo",          date:"Nov 2024", month:"Nov 2024", likes:710,  views:9800,  type:"Video",   caption:"Akhir tahun promo besar-besaran! Diskon hingga 30 juta..." },
+  { account:"bosowaberlianurip",            date:"Feb 2025", month:"Feb 2025", likes:680,  views:9200,  type:"Video",   caption:"Mitsubishi L300 masih jadi andalan! Harga terjangkau..." },
+  { account:"sunstarprimamotorfatmawati",   date:"Jan 2025", month:"Jan 2025", likes:640,  views:8700,  type:"Video",   caption:"Xforce terbaru sudah bisa dipesan! Spesifikasi lengkap..." },
+  { account:"mitsubishidipo.arengka",       date:"Mar 2025", month:"Mar 2025", likes:590,  views:8100,  type:"Video",   caption:"Galant turun harga? Cek promo spesial bulan ini..." },
+  { account:"mitsubishibosowakairagimanado",date:"Dec 2024", month:"Dec 2024", likes:540,  views:7600,  type:"Sidecar", caption:"Akhir tahun beli Mitsubishi dapat hadiah TV + AC..." },
+];
+
+// ── State ─────────────────────────────────────────────────────────────────────
+let currentRange  = 'all';
+let currentGran   = 'monthly';
+let currentMatrix = 'posts';
+let currentTrend  = 'posts';
+let pinnedAccounts = []; // empty = show aggregate total
+let trendChart    = null;
+let insightsOpen     = false;
+let rankingsExpanded = false;
+let matrixExpanded   = false;
+
+function toggleRankings() {
+  rankingsExpanded = !rankingsExpanded;
+  const wrap = document.getElementById('rankScroll');
+  const btn  = document.getElementById('rankToggleBtn');
+  wrap.style.maxHeight   = rankingsExpanded ? 'none' : '320px';
+  btn.textContent        = rankingsExpanded ? '▲ Collapse' : `▼ Show all ${ACCOUNTS.length} accounts`;
+}
+
+function toggleMatrix() {
+  matrixExpanded = !matrixExpanded;
+  const wrap = document.getElementById('matrixScroll');
+  const btn  = document.getElementById('matrixToggleBtn');
+  wrap.style.maxHeight = matrixExpanded ? 'none' : '360px';
+  btn.textContent      = matrixExpanded ? '▲ Collapse' : `▼ Show all ${ACCOUNTS.length} accounts`;
+}
+
+function toggleInsights() {
+  insightsOpen = !insightsOpen;
+  const list   = document.getElementById('insightList');
+  const toggle = document.getElementById('insightToggle');
+  list.style.display     = insightsOpen ? 'flex'          : 'none';
+  list.style.flexDirection = insightsOpen ? 'column'      : '';
+  toggle.className       = `insights-toggle ${insightsOpen ? 'open' : ''}`;
+}
+
+// ── Visible columns ───────────────────────────────────────────────────────────
+function getCustomDateRange() {
+  // Parse date inputs as local time (split manually to avoid UTC offset issues)
+  const [fy, fm, fd] = document.getElementById('dateFrom').value.split('-').map(Number);
+  const [ty, tm, td] = document.getElementById('dateTo').value.split('-').map(Number);
+  return {
+    from: new Date(fy, fm - 1, fd),
+    to:   new Date(ty, tm - 1, td),
+  };
+}
+
+function getVisibleCols() {
+  if (currentRange === 'custom') {
+    const { from, to } = getCustomDateRange();
+    if (currentGran === 'monthly') {
+      return ALL_MONTHS.filter((_, i) => ALL_MONTH_DATES[i] >= from && ALL_MONTH_DATES[i] <= to);
+    } else {
+      return ALL_WEEKS.filter((_, i) => ALL_WEEK_DATES[i] >= from && ALL_WEEK_DATES[i] <= to);
+    }
+  }
+  const spec = RANGE_SLICES[currentGran][currentRange];
+  return currentGran === 'monthly' ? slice(ALL_MONTHS, spec) : slice(ALL_WEEKS, spec);
+}
+
+function getColIndices() {
+  if (currentRange === 'custom') {
+    const { from, to } = getCustomDateRange();
+    if (currentGran === 'monthly') {
+      return ALL_MONTH_DATES.map((d, i) => d >= from && d <= to ? i : -1).filter(i => i !== -1);
+    } else {
+      return ALL_WEEK_DATES.map((d, i) => d >= from && d <= to ? i : -1).filter(i => i !== -1);
+    }
+  }
+  const spec = RANGE_SLICES[currentGran][currentRange];
+  const [a, b] = spec.split(':').map(Number);
+  return Array.from({ length: b - a }, (_, i) => a + i);
+}
+
+function getAccountVals(acc, metric) {
+  if (currentGran === 'monthly') {
+    return metric === 'likes' ? acc.mlikes : metric === 'views' ? acc.mviews : acc.months;
+  } else {
+    return metric === 'likes' ? acc.wlikes : metric === 'views' ? acc.wviews : acc.weeks;
+  }
+}
+
+// Compute totals for any set of column indices (respects current granularity)
+function getPeriodTotals(idx) {
+  let posts = 0, likes = 0, views = 0;
+  matrixData.forEach(a => {
+    const postArr  = currentGran === 'monthly' ? a.months  : a.weeks;
+    const likesArr = currentGran === 'monthly' ? a.mlikes  : a.wlikes;
+    const viewsArr = currentGran === 'monthly' ? a.mviews  : a.wviews;
+    idx.forEach(i => {
+      posts += postArr[i]  || 0;
+      likes += likesArr[i] || 0;
+      views += viewsArr[i] || 0;
+    });
+  });
+  return { posts, likes, views };
+}
+
+// Previous equivalent period: same number of periods, immediately before
+function getComparisonIndices() {
+  if (currentRange === 'all') return []; // no prev period for "All"
+  const idx = getColIndices();
+  if (!idx.length) return [];
+  const shift = idx.length;
+  return idx.map(i => i - shift).filter(i => i >= 0);
+}
+
+// ── Range / gran controls ─────────────────────────────────────────────────────
+function resetExpandStates() {
+  if (rankingsExpanded) toggleRankings();
+  if (matrixExpanded)   toggleMatrix();
+}
+
+function setRange(btn, val) {
+  currentRange = val;
+  if (btn) {
+    document.querySelectorAll('#rangeGroup .btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  } else {
+    document.querySelectorAll('#rangeGroup .btn').forEach(b => b.classList.remove('active'));
+  }
+  resetExpandStates();
+  updateBadge();
+  renderAll();
+}
+
+function setGran(btn, val) {
+  currentGran = val;
+  document.querySelectorAll('#granGroup .btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  updateBadge();
+  renderAll();
+}
+
+function updateBadge() {
+  const cols = getVisibleCols();
+  const gran = currentGran === 'monthly' ? 'months' : 'weeks';
+  if (!cols.length) {
+    document.getElementById('rangeBadge').textContent = 'No data in range';
+    return;
+  }
+  const first = cols[0], last = cols[cols.length - 1];
+  document.getElementById('rangeBadge').textContent = `${first} – ${last} · ${cols.length} ${gran}`;
+}
+
+// ── Render KPIs ───────────────────────────────────────────────────────────────
+function renderKPIs() {
+  const idx    = getColIndices();
+  const cmpIdx = getComparisonIndices();
+  const curr   = getPeriodTotals(idx);
+  const prev   = cmpIdx.length ? getPeriodTotals(cmpIdx) : null;
+
+  const dormant = ACCOUNTS.filter(a => a.lastDays > 14).length;
+  const active  = ACCOUNTS.length - dormant;
+
+  // Metrics
+  const avgLikes   = curr.posts > 0 ? Math.round(curr.likes / curr.posts) : 0;
+  const avgViews   = curr.posts > 0 ? Math.round(curr.views / curr.posts) : 0;
+  const periodLen  = currentGran === 'monthly' ? idx.length * 4.33 : idx.length;
+  const postsPerWk = periodLen > 0 ? (curr.posts / periodLen).toFixed(1) : '0';
+
+  const avgViews   = curr.posts > 0 ? Math.round(curr.views / curr.posts) : 0;
+  const prevPpw    = prev && periodLen > 0 ? (prev.posts / periodLen).toFixed(1) : null;
+  const prevAvgLikes = prev && prev.posts > 0 ? Math.round(prev.likes / prev.posts) : null;
+  const prevAvgViews = prev && prev.posts > 0 ? Math.round(prev.views / prev.posts) : null;
+
+  function delta(curr, prev) {
+    if (prev === null || prev === 0) return '';
+    const pct = ((curr - prev) / prev * 100);
+    const up  = pct >= 0;
+    return `<div style="font-size:11px;font-weight:600;margin-top:5px;color:${up ? '#16a34a' : '#dc2626'};">
+      ${up ? '↑' : '↓'} ${up ? '+' : ''}${pct.toFixed(1)}% vs prev period
+    </div>`;
+  }
+
+  document.getElementById('kpiGrid').innerHTML = `
+    <div class="kpi-card">
+      <div class="kpi-label">Avg Posts / Week</div>
+      <div class="kpi-value">${postsPerWk}</div>
+      ${delta(parseFloat(postsPerWk), parseFloat(prevPpw))}
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Avg Likes / Post</div>
+      <div class="kpi-value">${avgLikes}</div>
+      ${delta(avgLikes, prevAvgLikes)}
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Avg Views / Post</div>
+      <div class="kpi-value">${avgViews >= 1000 ? (avgViews/1000).toFixed(1)+'K' : avgViews}</div>
+      ${delta(avgViews, prevAvgViews)}
+    </div>
+    <div class="kpi-card ${dormant > 0 ? 'danger' : ''}">
+      <div class="kpi-label">Active Accounts</div>
+      <div class="kpi-value">${active} <span style="font-size:16px;color:#aaa;">/ ${ACCOUNTS.length}</span></div>
+      <div class="kpi-sub">${dormant > 0 ? dormant + ' dormant (no post in 14d)' : 'All accounts active'}</div>
+    </div>
+  `;
+}
+
+// ── Render Insights ───────────────────────────────────────────────────────────
+function renderInsights() {
+  const cols = getVisibleCols();
+  document.getElementById('insightRange').textContent = cols.length ? `· ${cols[0]} – ${cols[cols.length-1]}` : '';
+
+  const dormant = ACCOUNTS.filter(a => a.lastDays > 14);
+  const items = [];
+
+  if (dormant.length > 0) {
+    const shown = dormant.slice(0, 2).map(a => `<strong>@${a.name}</strong>`).join(', ');
+    const more  = dormant.length > 2 ? ` <span style="color:#888;">+${dormant.length - 2} more</span>` : '';
+    items.push(`<div class="insight-item red"><span class="insight-icon">🔴</span><span class="insight-text"><strong>${dormant.length} accounts dormant</strong> (no post in 14d): ${shown}${more}</span></div>`);
+  }
+
+  items.push(
+    `<div class="insight-item green"><span class="insight-icon">📈</span><span class="insight-text"><strong>Rising:</strong> @mitsubishi.gresik engagement up <strong>+42%</strong> vs previous period</span></div>`,
+    `<div class="insight-item orange"><span class="insight-icon">📉</span><span class="insight-text"><strong>Declining:</strong> @halomitsubishi engagement down <strong>−35%</strong> vs previous period</span></div>`,
+    `<div class="insight-item blue"><span class="insight-icon">🎬</span><span class="insight-text"><strong>Content insight:</strong> Video posts get <strong>3.2×</strong> more engagement than Images across all accounts</span></div>`,
+    `<div class="insight-item yellow"><span class="insight-icon">⭐</span><span class="insight-text"><strong>Top performer:</strong> @rismamitsubishisolo — avg <strong>284 engagement/post</strong></span></div>`,
+  );
+
+  document.getElementById('insightCount').textContent = items.length;
+  document.getElementById('insightList').innerHTML = items.join('');
+  document.getElementById('insightList').style.display      = insightsOpen ? 'flex'   : 'none';
+  document.getElementById('insightList').style.flexDirection = insightsOpen ? 'column' : '';
+  document.getElementById('insightToggle').className        = `insights-toggle ${insightsOpen ? 'open' : ''}`;
+}
+
+// ── Render Rankings (dynamic — respects date range) ───────────────────────────
+function renderRankings() {
+  const idx    = getColIndices();
+  const cmpIdx = getComparisonIndices();
+  const table  = document.getElementById('rankBody').closest('table');
+
+  function acctTotals(md, idxArr) {
+    const postArr  = currentGran === 'monthly' ? md.months  : md.weeks;
+    const likesArr = currentGran === 'monthly' ? md.mlikes  : md.wlikes;
+    const viewsArr = currentGran === 'monthly' ? md.mviews  : md.wviews;
+    const p = idxArr.reduce((s, i) => s + (postArr[i]  || 0), 0);
+    const l = idxArr.reduce((s, i) => s + (likesArr[i] || 0), 0);
+    const v = idxArr.reduce((s, i) => s + (viewsArr[i] || 0), 0);
+    return { p, l, v };
+  }
+
+  const computed = ACCOUNTS.map((a, ai) => {
+    const md       = matrixData[ai];
+    const { p, l, v } = acctTotals(md, idx);
+    const avgLikes     = p > 0 ? Math.round(l / p) : 0;
+    const avgViews     = p > 0 ? Math.round(v / p) : 0;
+
+    let popLikes = null, popViews = null;
+    if (cmpIdx.length) {
+      const { p: cp, l: cl, v: cv } = acctTotals(md, cmpIdx);
+      const prevAvgLikes = cp > 0 ? Math.round(cl / cp) : 0;
+      const prevAvgViews = cp > 0 ? Math.round(cv / cp) : 0;
+      if (prevAvgLikes > 0) popLikes = ((avgLikes - prevAvgLikes) / prevAvgLikes * 100);
+      if (prevAvgViews > 0) popViews = ((avgViews - prevAvgViews) / prevAvgViews * 100);
+    }
+
+    return { ...a, fPosts: p, avgLikes, avgViews, popLikes, popViews };
+  }).sort((a, b) => b.avgLikes - a.avgLikes);
+
+  table.querySelectorAll('tbody').forEach(tb => tb.remove());
+  const tbody = document.createElement('tbody');
+  tbody.id = 'rankBody';
+  table.appendChild(tbody);
+
+  computed.forEach((a, i) => {
+    const isTop     = i < 5;
+    const isBottom  = i >= computed.length - 5;
+    const isDormant = a.status === 'dormant';
+    const rowClass  = isDormant ? 'dormant-row' : isTop ? 'top-row' : isBottom ? 'bottom-row' : '';
+    const badge     = isDormant
+      ? '<span class="badge orange">Dormant</span>'
+      : isTop    ? '<span class="badge green">Top</span>'
+      : isBottom ? '<span class="badge red">Low</span>' : '';
+    const lastPosted = a.lastDays === 0 ? 'Today' : a.lastDays === 1 ? 'Yesterday' : `${a.lastDays}d ago`;
+
+    function popBadge(pct) {
+      if (pct === null) return '';
+      return `<div style="font-size:10px;font-weight:600;margin-top:2px;color:${pct >= 0 ? '#16a34a' : '#dc2626'};">
+        ${pct >= 0 ? '↑' : '↓'} ${pct >= 0 ? '+' : ''}${pct.toFixed(1)}%
+      </div>`;
+    }
+
+    const tr = document.createElement('tr');
+    tr.className = `account-row ${rowClass}`;
+    tr.innerHTML = `
+      <td style="color:#aaa;font-weight:600;">${i + 1}</td>
+      <td style="font-weight:600;">@${a.name}</td>
+      <td>${a.fPosts.toLocaleString()}</td>
+      <td><strong>${a.avgLikes.toLocaleString()}</strong>${popBadge(a.popLikes)}</td>
+      <td>${a.avgViews.toLocaleString()}${popBadge(a.popViews)}</td>
+      <td>
+        <div class="consistency-bar">
+          <div class="bar-track"><div class="bar-fill" style="width:${a.consistency}%"></div></div>
+          <span style="font-size:11px;color:#888;">${(a.consistency / 10).toFixed(1)}/wk</span>
+        </div>
+      </td>
+      <td style="color:${a.lastDays > 14 ? '#e53e3e' : '#555'}">${lastPosted}</td>
+      <td>${badge}</td>`;
+    tr.onclick = () => openDrillModal(a, i + 1);
+    tbody.appendChild(tr);
+  });
+}
+
+// ── Account drill-down modal ──────────────────────────────────────────────────
+function openDrillModal(a, rank) {
+  document.getElementById('modalTitle').textContent = '@' + a.name;
+  document.getElementById('modalSubtitle').textContent =
+    `Rank #${rank} · ${a.status === 'dormant' ? '⚠️ Dormant — no post in 14d' : 'Active'} · Last posted ${a.lastDays}d ago`;
+
+  const icons = ['🎬','📷','🖼️','🎬','📷','🎬','🖼️','🎬','📷','🎬'];
+  const types = ['Video','Image','Sidecar','Video','Image','Video','Sidecar','Video','Image','Video'];
+  const rows = icons.map((ic, j) => {
+    const fakeLikes = a.fPosts > 0 ? Math.round(a.fLikes / a.fPosts * (1 + (9 - j) * 0.08)) : 0;
+    const fakeViews = a.fPosts > 0 ? Math.round(a.fViews / a.fPosts * (1 + (9 - j) * 0.08)) : 0;
+    return `<tr>
+      <td><div class="modal-thumb">${ic}</div></td>
+      <td style="color:#666;">Post ${j + 1}</td>
+      <td><span class="badge" style="background:#e2e8f0;color:#4a5568;">${types[j]}</span></td>
+      <td><strong>${fakeLikes.toLocaleString()}</strong></td>
+      <td>${fakeViews.toLocaleString()}</td>
+      <td><a href="#" class="post-link">View →</a></td>
+    </tr>`;
+  }).join('');
+
+  document.getElementById('modalBody').innerHTML = `
+    <div class="modal-stats">
+      <div class="modal-stat"><div class="modal-stat-label">Avg Likes/Post</div><div class="modal-stat-value">${a.fPosts > 0 ? Math.round(a.fLikes/a.fPosts) : 0}</div></div>
+      <div class="modal-stat"><div class="modal-stat-label">Avg Views/Post</div><div class="modal-stat-value">${a.fPosts > 0 ? Math.round(a.fViews/a.fPosts) : 0}</div></div>
+      <div class="modal-stat"><div class="modal-stat-label">Consistency</div><div class="modal-stat-value">${(a.consistency/10).toFixed(1)}/wk</div></div>
+    </div>
+    <div style="font-size:11px;color:#888;margin-bottom:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">Top 10 Posts</div>
+    <table class="modal-posts-table">
+      <thead><tr><th></th><th>Post</th><th>Type</th><th>Likes</th><th>Views</th><th></th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+
+  document.getElementById('drillModal').classList.add('open');
+}
+
+function closeModal() {
+  document.getElementById('drillModal').classList.remove('open');
+}
+
+function handleModalClick(e) {
+  if (e.target === document.getElementById('drillModal')) closeModal();
+}
+
+// ── Matrix ────────────────────────────────────────────────────────────────────
+function setMatrixMetric(btn, val) {
+  currentMatrix = val;
+  document.querySelectorAll('#matrixMetricGroup .btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderMatrix();
+}
+
+function cellStyle(v, rowMax) {
+  if (v === 0) return 'background:#f5f5f5;color:#ccc;';
+  const p = v / rowMax; // 0..1
+  // Interpolate white (255,255,255) → deep blue (30,64,175)
+  const r = Math.round(255 + (30  - 255) * p);
+  const g = Math.round(255 + (64  - 255) * p);
+  const b = Math.round(255 + (175 - 255) * p);
+  const textColor = p > 0.55 ? 'white' : '#1e3a8a';
+  return `background:rgb(${r},${g},${b});color:${textColor};`;
+}
+
+function renderMatrix() {
+  const cols = getVisibleCols();
+  const idx  = getColIndices();
+  const head = document.getElementById('matrixHead');
+  const body = document.getElementById('matrixBody');
+
+  head.innerHTML = `<tr>
+    <th class="sticky-col">Account</th>
+    ${cols.map(c => `<th style="text-align:center">${c}</th>`).join('')}
+  </tr>`;
+
+  const allVals = matrixData.flatMap(a => {
+    const vals = getAccountVals(a, currentMatrix);
+    return idx.map(i => vals[i]);
+  });
+  const max = Math.max(...allVals, 1);
+
+  body.innerHTML = matrixData.map((a) => {
+    const vals    = getAccountVals(a, currentMatrix);
+    const rowVals = idx.map(i => vals[i] || 0);
+    const rowMax  = Math.max(...rowVals, 1); // per-row scale
+    const pinIdx  = pinnedAccounts.indexOf(a.name);
+    const isPinned = pinIdx !== -1;
+    const color   = isPinned ? COLORS[pinIdx % COLORS.length] : null;
+    const dot     = isPinned
+      ? `<span class="pin-indicator" style="background:${color}"></span>`
+      : '<span class="pin-indicator" style="background:transparent;border:1.5px solid #ddd"></span>';
+
+    return `<tr class="${isPinned ? 'pinned' : ''}"
+                onclick="togglePin('${a.name}')"
+                style="cursor:pointer;${isPinned ? `border-left:3px solid ${color}` : ''}"
+                title="${isPinned ? 'Click to unpin from trend chart' : 'Click to pin in trend chart'}">
+      <td class="sticky-col" style="${isPinned ? `border-left:3px solid ${color};font-weight:700;` : ''}" title="@${a.name}">
+        ${dot}@${a.name}
+      </td>
+      ${rowVals.map(v => `<td class="cell" style="${cellStyle(v, rowMax)}">${v > 0 ? v.toLocaleString() : '–'}</td>`).join('')}
+    </tr>`;
+  }).join('');
+}
+
+function togglePin(name) {
+  const idx = pinnedAccounts.indexOf(name);
+  if (idx !== -1) pinnedAccounts.splice(idx, 1);
+  else pinnedAccounts.push(name);
+  renderMatrix();
+  renderPinnedStrip();
+  renderTrend();
+}
+
+// ── Pinned strip (above trend chart) ─────────────────────────────────────────
+function renderPinnedStrip() {
+  const strip = document.getElementById('pinnedStrip');
+  const label = document.getElementById('trendModeLabel');
+  if (pinnedAccounts.length === 0) {
+    strip.innerHTML = '<span class="pinned-empty">Showing total across all accounts · Click a row in the matrix below to compare individual accounts</span>';
+    if (label) label.textContent = '· All accounts total';
+    return;
+  }
+  if (label) label.textContent = `· ${pinnedAccounts.length} account${pinnedAccounts.length > 1 ? 's' : ''} pinned`;
+  strip.innerHTML = '<span style="font-size:11px;color:#888;font-weight:600;">PINNED:</span> ' +
+    pinnedAccounts.map((name, i) => {
+      const color = COLORS[i % COLORS.length];
+      return `<span class="pinned-pill" style="color:${color};border-color:${color}20;background:${color}10"
+                onclick="togglePin('${name}')" title="Click to remove">
+        <span class="dot" style="background:${color}"></span>
+        @${name}
+        <span class="remove">✕</span>
+      </span>`;
+    }).join('') +
+    ' <span style="font-size:11px;color:#aaa;cursor:pointer;text-decoration:underline;" onclick="pinnedAccounts=[];renderMatrix();renderPinnedStrip();renderTrend();">clear all</span>';
+}
+
+// ── Trend chart ───────────────────────────────────────────────────────────────
+function setTrendMetric(btn, val) {
+  currentTrend = val;
+  document.querySelectorAll('#trendMetricGroup .btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderTrend();
+}
+
+function renderTrend() {
+  const cols = getVisibleCols();
+  const idx  = getColIndices();
+
+  let datasets;
+  if (pinnedAccounts.length === 0) {
+    // Aggregate total across all accounts
+    const totalData = idx.map(j => matrixData.reduce((s, a) => {
+      const vals = getAccountVals(a, currentTrend);
+      return s + (vals[j] || 0);
+    }, 0));
+    datasets = [{
+      label: 'All Accounts (Total)',
+      data: totalData,
+      borderColor: '#c00',
+      backgroundColor: '#c0010015',
+      borderWidth: 2.5,
+      pointRadius: 3,
+      pointHoverRadius: 6,
+      tension: 0.35,
+      fill: false,
+    }];
+  } else {
+    datasets = pinnedAccounts.map((name, i) => {
+      const acc  = matrixData.find(a => a.name === name);
+      const vals = getAccountVals(acc, currentTrend);
+      const data = idx.map(j => vals[j] || 0);
+      const color = COLORS[i % COLORS.length];
+      return {
+        label: '@' + name,
+        data,
+        borderColor: color,
+        backgroundColor: color + '15',
+        borderWidth: 2.5,
+        pointRadius: 4,
+        pointHoverRadius: 6,
+        tension: 0.35,
+        fill: false,
+      };
+    });
+  }
+
+  // Show hint when monthly + 3M (only 3 data points)
+  document.getElementById('trendHint').style.display =
+    (currentRange === '3m' && currentGran === 'monthly') ? 'block' : 'none';
+
+  if (trendChart) trendChart.destroy();
+  trendChart = new Chart(document.getElementById('trendChart'), {
+    type: 'line',
+    data: { labels: cols, datasets },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { font: { size: 11 }, boxWidth: 12, padding: 14,
+            generateLabels: (chart) => chart.data.datasets.map((ds, i) => ({
+              text: ds.label,
+              fillStyle: ds.borderColor,
+              strokeStyle: ds.borderColor,
+              lineWidth: 2,
+              hidden: false,
+              index: i,
+            }))
+          }
+        },
+        tooltip: { mode: 'index', intersect: false }
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { size: 11 }, maxTicksLimit: 12 } },
+        y: { beginAtZero: true, ticks: { font: { size: 11 } } }
+      },
+      interaction: { mode: 'nearest', axis: 'x', intersect: false },
+      animation: { duration: 250 }
+    }
+  });
+}
+
+// ── Viral posts ───────────────────────────────────────────────────────────────
+// Month whitelists per range (independent of granularity)
+const VIRAL_MONTHS = {
+  all:  null,
+  '6m': new Set(['Dec 2024','Jan 2025','Feb 2025','Mar 2025','Apr 2025','May 2025']),
+  '3m': new Set(['Mar 2025','Apr 2025','May 2025']),
+};
+function renderViral() {
+  let allowed;
+  if (currentRange === 'custom') {
+    // Build a set of "Mon YYYY" month labels that fall within the custom date range
+    const { from, to } = getCustomDateRange();
+    allowed = new Set(
+      ALL_MONTH_DATES
+        .map((d, i) => d >= from && d <= to ? ALL_MONTHS[i] : null)
+        .filter(Boolean)
+    );
+  } else {
+    allowed = VIRAL_MONTHS[currentRange];
+  }
+  const filtered = ALL_VIRAL
+    .filter(p => !allowed || allowed.has(p.month))
+    .sort((a,b) => (b.likes + b.views) - (a.likes + a.views));
+
+  document.getElementById('viralHint').textContent = `${filtered.length} posts · sorted by likes + views`;
+
+  const typeIcon = { Video:'🎬', Image:'📷', Sidecar:'🖼️' };
+  document.getElementById('viralBody').innerHTML = filtered.length
+    ? filtered.map(p => `
+        <tr>
+          <td><div class="viral-thumb">${typeIcon[p.type] || '📷'}</div></td>
+          <td style="font-weight:600;">@${p.account}</td>
+          <td style="color:#666;">${p.date}</td>
+          <td><span class="badge" style="background:#e2e8f0;color:#4a5568;">${p.type}</span></td>
+          <td><strong>${p.likes.toLocaleString()}</strong></td>
+          <td>${p.views ? p.views.toLocaleString() : '–'}</td>
+          <td><span class="caption-text" title="${p.caption}">${p.caption}</span></td>
+          <td><a href="#" class="post-link">View →</a></td>
+        </tr>`).join('')
+    : `<tr><td colspan="8" style="text-align:center;color:#aaa;padding:24px;">No posts in selected range</td></tr>`;
+}
+
+// ── Render all ────────────────────────────────────────────────────────────────
+function renderAll() {
+  renderKPIs();
+  renderInsights();
+  renderRankings();
+  renderMatrix();
+  renderPinnedStrip();
+  renderTrend();
+  renderViral();
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+updateBadge();
+renderAll();
+</script>
+</body>
+</html>
